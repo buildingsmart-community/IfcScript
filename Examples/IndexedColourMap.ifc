@@ -1,0 +1,40 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [notYetAssigned]'),'2;1');
+FILE_NAME(
+/* name */ '',
+/* time_stamp */ '2014-11-15T17:46:20',
+/* author */ ('Jon'),
+/* organization */ ('Unknown'),
+/* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
+/* originating_system */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
+/* authorization */ 'None');
+
+FILE_SCHEMA (('IFC4'));
+ENDSEC;
+
+DATA;
+#50= IFCBUILDING('3pgsAxdsP7WgtqWlCKTWar',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#51= IFCLOCALPLACEMENT($,#52);
+#52= IFCAXIS2PLACEMENT3D(#53,$,$);
+#53= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('1GVdrfLUvChRi5riGFFvdc',$,'Building','Building Container for Elements',(#300),#50);
+#55= IFCLOCALPLACEMENT(#51,#52);
+#57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
+#100= IFCPROJECT('1HRq2kh0z3XRIHeBk0CU1U',$,'IfcProject',$,$,'IfcProject','',$,#101);
+#101= IFCUNITASSIGNMENT((#102,#103,#104));
+#102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
+#103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
+#104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
+#105= IFCRELAGGREGATES('3GJo55nAX1bfwv4q6HorVY',$,'Project Container','Project Container for Buildings',#100,(#50));
+#200= IFCCARTESIANPOINTLIST3D(((0.0,0.0,0.0),(1.0,0.0,0.0),(1.0,1.0,0.0),(0.0,1.0,0.0),(0.0,0.0,2.0),(1.0,0.0,2.0),(1.0,1.0,2.0),(0.0,1.0,2.0)));
+#201= IFCTRIANGULATEDFACESET(#200,$,.T.,((1,6,5),(1,2,6),(6,2,7),(7,2,3),(7,8,6),(6,8,5),(5,8,1),(1,8,4),(4,2,1),(2,4,3),(4,8,7),(7,3,4)),$);
+#202= IFCCOLOURRGBLIST(((255.0,0.0,0.0),(0.0,128.0,0.0),(255.0,255.0,0.0)));
+#203= IFCINDEXEDCOLOURLIST(#201,$,#202,(1,1,2,2,3,3,1,1,1,1,1));
+#300= IFCBUILDINGELEMENTPROXY('2wvmI449XEq8c$D$Sqm8bg',$,'BuildingElementProxy',$,$,#55,#301,$,.NOTDEFINED.);
+#301= IFCPRODUCTDEFINITIONSHAPE($,$,(#302));
+#302= IFCSHAPEREPRESENTATION($,'Body','Tessellation',(#201));
+ENDSEC;
+
+END-ISO-10303-21;
+

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IfcScript", "IfcScript\IfcScript.csproj", "{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Debug|x64.ActiveCfg = Debug|x64
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Debug|x64.Build.0 = Debug|x64
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Debug|x86.ActiveCfg = Release|Any CPU
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Debug|x86.Build.0 = Release|Any CPU
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Release|x64.ActiveCfg = Release|x64
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Release|x64.Build.0 = Release|x64
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Release|x86.ActiveCfg = Release|x64
+		{09B75B8A-44EC-49D8-BF76-CBD21C5EEB43}.Release|x86.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

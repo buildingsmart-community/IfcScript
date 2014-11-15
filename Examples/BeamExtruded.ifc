@@ -1,0 +1,45 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [notYetAssigned]'),'2;1');
+FILE_NAME(
+/* name */ '',
+/* time_stamp */ '2014-11-15T17:46:20',
+/* author */ ('Jon'),
+/* organization */ ('Unknown'),
+/* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
+/* originating_system */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
+/* authorization */ 'None');
+
+FILE_SCHEMA (('IFC4'));
+ENDSEC;
+
+DATA;
+#50= IFCBUILDING('2emybNcfX7ev_SPucGVG0h',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#51= IFCLOCALPLACEMENT($,#52);
+#52= IFCAXIS2PLACEMENT3D(#53,$,$);
+#53= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('0yQlslJjfD68Qndm0tUEiu',$,'Building','Building Container for Elements',(#209),#50);
+#55= IFCLOCALPLACEMENT(#51,#52);
+#57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
+#100= IFCPROJECT('1y9fgv9GzD3fcSOVCJkCHD',$,'IfcProject',$,$,'IfcProject','',$,#101);
+#101= IFCUNITASSIGNMENT((#102,#103,#104));
+#102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
+#103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
+#104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
+#105= IFCRELAGGREGATES('1deIRjPE1F_QOmJmQ1LEt8',$,'Project Container','Project Container for Buildings',#100,(#50));
+#200= IFCCARTESIANPOINTLIST2D(((2.8,-79.5),(2.8,79.5),(6.314719,87.985281),(14.8,91.5),(50.0,91.5),(50.0,100.0),(-50.0,100.0),(-50.0,91.5),(-14.8,91.5),(-6.314719,87.985281),(-2.8,79.5),(-2.8,-79.5),(-6.314719,-87.985281),(-14.8,-91.5),(-50.0,-91.5),(-50.0,-100.0),(50.0,-100.0),(50.0,-91.5),(14.8,-91.5),(6.314719,-87.985281),(2.8,-79.5)));
+#201= IFCINDEXEDPOLYCURVE(#200,(IFCLINEINDEX((1,2)),IFCARCINDEX((2,3,4)),IFCLINEINDEX((4,5,6,7,8,9)),IFCARCINDEX((9,10,11)),IFCLINEINDEX((11,12)),IFCARCINDEX((12,13,14)),IFCLINEINDEX((14,15,16,17,18,19)),IFCARCINDEX((19,20,21))),.U.);
+#202= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,'IPE200',#201);
+#203= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#204= IFCDIRECTION((0.0,1.0,0.0));
+#205= IFCDIRECTION((1.0,0.0,0.0));
+#206= IFCAXIS2PLACEMENT3D(#203,#204,#205);
+#207= IFCDIRECTION((0.0,0.0,1.0));
+#208= IFCEXTRUDEDAREASOLID(#202,#206,#207,1000.0);
+#209= IFCBEAM('0Xkq3xuKT8_BPtOVtaNPDX',$,'ExampleBeamName','ExampleBeamDescription',$,#55,#210,'Tag',$);
+#210= IFCPRODUCTDEFINITIONSHAPE($,$,(#211));
+#211= IFCSHAPEREPRESENTATION($,'Body','SweptSolid',(#208));
+ENDSEC;
+
+END-ISO-10303-21;
+
