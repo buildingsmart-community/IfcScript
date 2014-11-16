@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examples\IfcSlab.cs" />
     <Compile Include="Examples\IfcWall.cs" />
     <Compile Include="Examples\IfcBeam.cs" />
     <Compile Include="Examples\IfcBeamUnitTests.cs" />

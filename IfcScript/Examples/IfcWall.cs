@@ -29,4 +29,5 @@ namespace IFC.Examples
 			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, null, wallType, new Line(0, 0, 0, 5000, 0, 0), 2000, 0, true, null);
 		}
 	}
+	
 }
