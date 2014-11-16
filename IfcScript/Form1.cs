@@ -33,6 +33,7 @@ namespace IFCExamples
 			new BeamTessellated().GenerateExample(path);
 			new IndexedColourMap().GenerateExample(path);
 			new BeamUnitTestsVarying().GenerateExample(path);
+			new Wall().GenerateExample(path);
 		}
 	}
 }
