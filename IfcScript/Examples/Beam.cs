@@ -47,9 +47,9 @@ namespace IFC.Examples
 
 			List<Coord2d> coords2d = new List<Coord2d>() {new Coord2d(2.8,-79.5),new Coord2d(2.8,79.5),new Coord2d(6.314719,87.985281),new Coord2d(14.8,91.5),new Coord2d(50.0,91.5),new Coord2d(50.0,100.0),new Coord2d(-50.0,100.0),new Coord2d(-50.0,91.5),new Coord2d(-14.8,91.5),new Coord2d(-6.314719,87.985281),new Coord2d(-2.8,79.5),new Coord2d(-2.8,-79.5),new Coord2d(-6.314719,-87.985281),new Coord2d(-14.8,-91.5),new Coord2d(-50.0,-91.5),new Coord2d(-50.0,-100.0),new Coord2d(50.0,-100.0),new Coord2d(50.0,-91.5),new Coord2d(14.8,-91.5),new Coord2d(6.314719,-87.985281),new Coord2d(2.8,-79.5) };
 			List<IfcSegmentIndexSelect> segmentIndices = new List<IfcSegmentIndexSelect>() { new IfcLineIndex(1,2), new IfcArcIndex(2,3,4),new IfcLineIndex(new List<int>() { 4,5,6,7,8,9 } ),new IfcArcIndex(9,10,11),new IfcLineIndex(11,12),new IfcArcIndex(12,13,14),new IfcLineIndex( new List<int> () {14,15,16,17,18,19}),new IfcArcIndex(19,20,21)  };
-			IfcIndexedPolyCurve indexedPolyCurve = new IfcIndexedPolyCurve(md, new IfcCartesianPointList2D(md, coords2d), segmentIndices);
-			IfcArbitraryClosedProfileDef arbitraryClosedProfileDef = new IfcArbitraryClosedProfileDef(md,IfcProfileTypeEnum.AREA,"IPE200",indexedPolyCurve);
-			IfcAxis2Placement3D axis2Placement3D = new IfcAxis2Placement3D(md,new IfcCartesianPoint(md,0,0,0),new IfcDirection(md,0,1,0),new IfcDirection(md,1,0,0));
+			IfcIndexedPolyCurve indexedPolyCurve = new IfcIndexedPolyCurve(new IfcCartesianPointList2D(md, coords2d), segmentIndices);
+			IfcArbitraryClosedProfileDef arbitraryClosedProfileDef = new IfcArbitraryClosedProfileDef(IfcProfileTypeEnum.AREA,"IPE200",indexedPolyCurve);
+			IfcAxis2Placement3D axis2Placement3D = new IfcAxis2Placement3D(new IfcCartesianPoint(md,0,0,0),new IfcDirection(md,0,1,0),new IfcDirection(md,1,0,0));
 			IfcExtrudedAreaSolid extrudedAreaSolid = new IfcExtrudedAreaSolid(arbitraryClosedProfileDef, axis2Placement3D,new IfcDirection(md,0,0,1),1000);
 			return new IfcBeam(building, elemParams, extrudedAreaSolid); 
 		}

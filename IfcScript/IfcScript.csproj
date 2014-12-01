@@ -93,11 +93,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Examples\IfcSlab.cs" />
-    <Compile Include="Examples\IfcWall.cs" />
-    <Compile Include="Examples\IfcBeam.cs" />
-    <Compile Include="Examples\IfcBeamUnitTests.cs" />
-    <Compile Include="Examples\IfcIndexedColourMap.cs" />
+    <Compile Include="Examples\Basin.cs" />
+    <Compile Include="Examples\Reinforcement.cs" />
+    <Compile Include="Examples\Slab.cs" />
+    <Compile Include="Examples\Wall.cs" />
+    <Compile Include="Examples\Beam.cs" />
+    <Compile Include="Examples\BeamUnitTests.cs" />
+    <Compile Include="Examples\IndexedColourMap.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

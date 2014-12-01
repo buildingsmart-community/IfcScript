@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [notYetAssigned]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-11-16T22:11:03',
+/* time_stamp */ '2014-12-01T18:31:37',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -14,19 +14,19 @@ FILE_SCHEMA (('IFC4'));
 ENDSEC;
 
 DATA;
-#50= IFCBUILDING('3g7vxvFz1ECA46q916DtRA',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#50= IFCBUILDING('08UItoIw97yfvWnlihMMaR',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
 #51= IFCLOCALPLACEMENT($,#52);
 #52= IFCAXIS2PLACEMENT3D(#53,$,$);
 #53= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('0ySfp1Z0T0evyFJBFrmZId',$,'Building','Building Container for Elements',(#209),#50);
+#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('0SLVZOagX7$83MEFiNVgbU',$,'Building','Building Container for Elements',(#209),#50);
 #55= IFCLOCALPLACEMENT(#51,#52);
 #57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
-#100= IFCPROJECT('0Qy9CtKULA_ecw9crrJNnN',$,'IfcProject',$,$,'IfcProject','',$,#101);
+#100= IFCPROJECT('0zWY2v72L9shF501EMSogX',$,'IfcProject',$,$,'IfcProject','',$,#101);
 #101= IFCUNITASSIGNMENT((#102,#103,#104));
 #102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
 #104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
-#105= IFCRELAGGREGATES('3yqp0AWFf9G9LjYPdYWOZH',$,'Project Container','Project Container for Buildings',#100,(#50));
+#105= IFCRELAGGREGATES('21ImjRQRDBq8XxB6ROs0LJ',$,'Project Container','Project Container for Buildings',#100,(#50));
 #200= IFCCARTESIANPOINTLIST2D(((2.8,-79.5),(2.8,79.5),(6.314719,87.985281),(14.8,91.5),(50.0,91.5),(50.0,100.0),(-50.0,100.0),(-50.0,91.5),(-14.8,91.5),(-6.314719,87.985281),(-2.8,79.5),(-2.8,-79.5),(-6.314719,-87.985281),(-14.8,-91.5),(-50.0,-91.5),(-50.0,-100.0),(50.0,-100.0),(50.0,-91.5),(14.8,-91.5),(6.314719,-87.985281),(2.8,-79.5)));
 #201= IFCINDEXEDPOLYCURVE(#200,(IFCLINEINDEX((1,2)),IFCARCINDEX((2,3,4)),IFCLINEINDEX((4,5,6,7,8,9)),IFCARCINDEX((9,10,11)),IFCLINEINDEX((11,12)),IFCARCINDEX((12,13,14)),IFCLINEINDEX((14,15,16,17,18,19)),IFCARCINDEX((19,20,21))),.U.);
 #202= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,'IPE200',#201);
@@ -36,7 +36,7 @@ DATA;
 #206= IFCAXIS2PLACEMENT3D(#203,#204,#205);
 #207= IFCDIRECTION((0.0,0.0,1.0));
 #208= IFCEXTRUDEDAREASOLID(#202,#206,#207,1000.0);
-#209= IFCBEAM('0zkB_N5J9FjgGejN9yJLu2',$,'ExampleBeamName','ExampleBeamDescription',$,#55,#210,'Tag',$);
+#209= IFCBEAM('0xDTV2dbP4OQ7hxYZRHmHi',$,'ExampleBeamName','ExampleBeamDescription',$,#55,#210,'Tag',$);
 #210= IFCPRODUCTDEFINITIONSHAPE($,$,(#211));
 #211= IFCSHAPEREPRESENTATION($,'Body','SweptSolid',(#208));
 ENDSEC;

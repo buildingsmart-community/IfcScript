@@ -35,6 +35,10 @@ namespace IFCExamples
 			new BeamUnitTestsVarying().GenerateExample(path);
 			new Slab().GenerateExample(path);
 			new Wall().GenerateExample(path);
+			new BasinAdvancedBrep().GenerateExample(path);
+			new BasinBrep().GenerateExample(path);
+			new BasinCSG().GenerateExample(path);
+			new BasinTessellation().GenerateExample(path);
 		}
 	}
 }
