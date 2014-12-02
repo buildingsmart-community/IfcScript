@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [notYetAssigned]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-01T18:31:37',
+/* time_stamp */ '2014-12-03T02:10:19',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -14,30 +14,30 @@ FILE_SCHEMA (('IFC4'));
 ENDSEC;
 
 DATA;
-#50= IFCBUILDING('2AUIop3c1CFOPVsHqmT6Qm',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#50= IFCBUILDING('32QH7u_Dn87wczrJESk0fG',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
 #51= IFCLOCALPLACEMENT($,#52);
 #52= IFCAXIS2PLACEMENT3D(#53,$,$);
 #53= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('1TllV90$jE7PeBc8MpDTik',$,'Building','Building Container for Elements',(#302),#50);
+#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('3RyWI3mT946BZveCSgkd76',$,'Building','Building Container for Elements',(#302),#50);
 #57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
-#100= IFCPROJECT('1$WGfAOb53iAnnFSmgLomD',$,'IfcProject',$,$,'IfcProject','',$,#101);
+#100= IFCPROJECT('3eDNA355b7hBaffSV3IDLc',$,'IfcProject',$,$,'IfcProject','',$,#101);
 #101= IFCUNITASSIGNMENT((#102,#103,#104));
 #102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
 #104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
-#105= IFCRELAGGREGATES('3UZ95_leT6ARVYAwoJAmXN',$,'Project Container','Project Container for Buildings',#100,(#50));
+#105= IFCRELAGGREGATES('0AW4YMzk99$gS6OgA2$pwT',$,'Project Container','Project Container for Buildings',#100,(#50));
 #200= IFCMATERIAL('Masonry - Brick - Brown',$,$);
 #203= IFCMATERIAL('Masonry',$,$);
 #206= IFCMATERIALLAYER(#200,110.0,.F.,'Finish',$,$,$);
 #208= IFCMATERIALLAYER($,50.0,.T.,'Air Infiltration Barrier',$,$,$);
 #210= IFCMATERIALLAYER(#203,110.0,.F.,'Core',$,$,$);
 #212= IFCMATERIALLAYERSET((#206,#208,#210),'Double Brick - 270',$);
-#213= IFCRELASSOCIATESMATERIAL('2HQv1uFSzEFxrqPcuW1b3S',$,'MatAssoc','Material Associates',(#300),#212);
-#300= IFCWALLTYPE('0KeK5ZDqzAgA3rdP$Z_qRq',$,'Double Brick - 270',$,$,$,$,$,$,.NOTDEFINED.);
-#301= IFCRELDEFINESBYTYPE('012v52JNz7hBFmZID1ag2F',$,'Double Brick - 270',$,(#302),#300);
-#302= IFCWALLSTANDARDCASE('3Pnd8_Vqz4h9WeEI3O$L6h',$,$,$,$,#305,#320,$,$);
+#213= IFCRELASSOCIATESMATERIAL('2I$akZVmj3yhkW_3Fkl0HG',$,'MatAssoc','Material Associates',(#300),#212);
+#300= IFCWALLTYPE('34GqvMj7H8U8uy1$$BfoeR',$,'Double Brick - 270',$,$,$,$,$,$,.NOTDEFINED.);
+#301= IFCRELDEFINESBYTYPE('1EC_zp$jj7HxVs9swNJPP$',$,'Double Brick - 270',$,(#302),#300);
+#302= IFCWALLSTANDARDCASE('1VzpuELCLCCf3Kcy4mb1vc',$,$,$,$,#305,#320,$,$);
 #303= IFCMATERIALLAYERSETUSAGE(#212,.AXIS2.,.POSITIVE.,0.0,$);
-#304= IFCRELASSOCIATESMATERIAL('0BzfV3fyXB$AWCC2KW0aH3',$,'MatAssoc','Material Associates',(#302),#303);
+#304= IFCRELASSOCIATESMATERIAL('3cIKJW67v9tOA$yZERyb03',$,'MatAssoc','Material Associates',(#302),#303);
 #305= IFCLOCALPLACEMENT($,#306);
 #306= IFCAXIS2PLACEMENT3D(#307,#308,#309);
 #307= IFCCARTESIANPOINT((0.0,0.0,0.0));

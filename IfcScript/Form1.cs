@@ -39,6 +39,8 @@ namespace IFCExamples
 			new BasinBrep().GenerateExample(path);
 			new BasinCSG().GenerateExample(path);
 			new BasinTessellation().GenerateExample(path);
+			new ReinforcingBar().GenerateExample(path);
+			new ReinforcingAssembly().GenerateExample(path);
 		}
 	}
 }

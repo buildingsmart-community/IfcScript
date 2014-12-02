@@ -16,7 +16,7 @@ namespace IFC.Examples
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
 			md.NextObjectRecord = 200;
-			List<Coord3d> coords = new List<Coord3d>() { new Coord3d(0, 0, 0), new Coord3d(1, 0, 0), new Coord3d(1, 1, 0), new Coord3d(0, 1, 0), new Coord3d(0, 0, 2), new Coord3d(1, 0, 2), new Coord3d(1, 1, 2), new Coord3d(0, 1, 2) };
+			List<Coord3d> coords = new List<Coord3d>() { new Coord3d(0, 0, 0), new Coord3d(1000, 0, 0), new Coord3d(1000, 1000, 0), new Coord3d(0, 1000, 0), new Coord3d(0, 0, 2000), new Coord3d(1000, 0, 2000), new Coord3d(1000, 1, 2000), new Coord3d(0, 1000, 2000) };
 			IfcCartesianPointList3D cartesianPointList3D = new IfcCartesianPointList3D(md, coords);
 			List<CoordIndex> coordIndex = new List<CoordIndex>() { new CoordIndex(1, 6, 5), new CoordIndex(1, 2, 6), new CoordIndex(6, 2, 7), new CoordIndex(7, 2, 3), new CoordIndex(7, 8, 6), new CoordIndex(6, 8, 5), new CoordIndex(5, 8, 1), new CoordIndex(1, 8, 4), new CoordIndex(4, 2, 1), new CoordIndex(2, 4, 3), new CoordIndex(4, 8, 7), new CoordIndex(7, 3, 4) };
 			IfcTriangulatedFaceSet triangulatedFaceSet = new IfcTriangulatedFaceSet(md, cartesianPointList3D, null, true, coordIndex, null);
