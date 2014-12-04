@@ -34,8 +34,12 @@ namespace IFCExamples
 			new IndexedColourMap().GenerateExample(path);
 			new BeamUnitTestsVaryingProfile().GenerateExample(path);
 			new BeamUnitTestsVaryingPath().GenerateExample(path);
+			new BeamUnitTestsVaryingCardinal().GenerateExample(path);
+			//todo tapered
 			new Slab().GenerateExample(path);
+			new SlabOpenings().GenerateExample(path);
 			new Wall().GenerateExample(path);
+			//todo wall with Openings
 			new BasinAdvancedBrep().GenerateExample(path);
 			new BasinBrep().GenerateExample(path);
 			new BasinCSG().GenerateExample(path);

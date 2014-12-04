@@ -41,5 +41,22 @@ namespace IFC.Examples
 			
 			IfcBeamStandardCase beamStandardCase2 = new IfcBeamStandardCase(building, new IfcElemParams("", "Revolution", "", "", ""), beamType, new Arc(new Point3d( 0, 0, 0),new Point3d(  -100,500, 0),new Point3d(0,1000,0)) , Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, new List<Plane>());
 		}
+	}
+
+	internal class BeamUnitTestsVaryingCardinal : IFCExampleBase
+	{
+		protected override void GenerateData(STPModelData md, IfcBuilding building)
+		{
+			IfcMaterial material = new IfcMaterial(md, "S355JR", "", "Steel");
+			md.NextObjectRecord = 100;
+			string name = "IPE200";
+			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(md, IfcProfileTypeEnum.AREA, name, null, 100, 200, 5.6, 8.5, 12, 0, 0);
+			IfcMaterialProfile materialProfile = new IfcMaterialProfile(md, name, "", material, ipe200, 0, "");
+			IfcBeamType beamType = new IfcBeamType(md, new IfcElemTypeParams("", name, "", "", ""), materialProfile, null, IfcBeamTypeEnum.JOIST);
+			IfcBeamStandardCase beamStandardCase = new IfcBeamStandardCase(building, new IfcElemParams("", "TopMid", "", "", ""), beamType, new Line(0, 0, 0, 0, 1000, 0), Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, new List<Plane>());
+			IfcBeamStandardCase beamStandardCase2 = new IfcBeamStandardCase(building, new IfcElemParams("", "BotMid", "", "", ""), beamType, new Line(0, 0, 0, 0, 1000, 0), Vector3d.ZAxis, IfcCardinalPointReference.BOTMID, new List<Plane>());
+			IfcBeamStandardCase beamStandardCase3 = new IfcBeamStandardCase(building, new IfcElemParams("", "BotLeft", "", "", ""), beamType, new Line(500, 0, 0, 500, 1000, 0), Vector3d.ZAxis, IfcCardinalPointReference.BOTLEFT, new List<Plane>());
+			IfcBeamStandardCase beamStandardCase4 = new IfcBeamStandardCase(building, new IfcElemParams("", "TopRight", "", "", ""), beamType, new Line(500, 0, 0, 500, 1000, 0), Vector3d.ZAxis, IfcCardinalPointReference.TOPRIGHT, new List<Plane>());
+		}
 	} 
 }
