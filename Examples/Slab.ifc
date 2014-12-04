@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [notYetAssigned]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-03T02:10:19',
+/* time_stamp */ '2014-12-04T15:11:45',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -14,25 +14,25 @@ FILE_SCHEMA (('IFC4'));
 ENDSEC;
 
 DATA;
-#50= IFCBUILDING('3YnWVWfwnCwvcmQrrb46zX',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#50= IFCBUILDING('2AazxAKTLFFuTbPqdpJfu0',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
 #51= IFCLOCALPLACEMENT($,#52);
 #52= IFCAXIS2PLACEMENT3D(#53,$,$);
 #53= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('04_8KLLIL1yeDsEMkk3ygh',$,'Building','Building Container for Elements',(#302),#50);
+#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('15RuorujzFX9Xpz7fRFt6t',$,'Building','Building Container for Elements',(#302),#50);
 #57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
-#100= IFCPROJECT('0Fm1isgJTF0RYevQZY5nex',$,'IfcProject',$,$,'IfcProject','',$,#101);
+#100= IFCPROJECT('2sViqsM1HAPhSrDLVhcCgv',$,'IfcProject',$,$,'IfcProject','',$,#101);
 #101= IFCUNITASSIGNMENT((#102,#103,#104));
 #102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
 #104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
-#105= IFCRELAGGREGATES('3dHR$6dif479cPWyTVEnaF',$,'Project Container','Project Container for Buildings',#100,(#50));
+#105= IFCRELAGGREGATES('3j7zyqmiX5$ROI_wQ3Fu5p',$,'Project Container','Project Container for Buildings',#100,(#50));
 #200= IFCMATERIAL('Concrete',$,$);
 #203= IFCMATERIALLAYER(#200,200.0,.F.,'Core',$,$,$);
 #205= IFCMATERIALLAYERSET((#203),'200mm Concrete',$);
-#206= IFCRELASSOCIATESMATERIAL('360q9O8518JBdcTGMZuIlN',$,'MatAssoc','Material Associates',(#300),#205);
-#300= IFCSLABTYPE('1id6EOWtH1rvWoe8LXYm4E',$,'200mm Concrete',$,$,$,$,$,$,.FLOOR.);
-#301= IFCRELDEFINESBYTYPE('1ggTLewHv2LBBGSRqwmdsJ',$,'200mm Concrete',$,(#302),#300);
-#302= IFCSLABSTANDARDCASE('2wNzQfcLv39QrQVJjTLeK8',$,$,$,$,#307,#316,$,$);
+#206= IFCRELASSOCIATESMATERIAL('2F5VKFO2HEvRUZc_8fK$jZ',$,'MatAssoc','Material Associates',(#300),#205);
+#300= IFCSLABTYPE('0rF9hoB$54mwHa5G4in3y8',$,'200mm Concrete',$,$,$,$,$,$,.FLOOR.);
+#301= IFCRELDEFINESBYTYPE('0MckMfwLfCIPg$dKtuwMXU',$,'200mm Concrete',$,(#302),#300);
+#302= IFCSLABSTANDARDCASE('3pHcESX$v0PfThKpLXmZRr',$,$,$,$,#307,#316,$,$);
 #303= IFCAXIS2PLACEMENT3D(#304,#305,#306);
 #304= IFCCARTESIANPOINT((0.0,0.0,-200.0));
 #305= IFCDIRECTION((0.0,0.0,1.0));
@@ -42,7 +42,7 @@ DATA;
 #309= IFCCARTESIANPOINTLIST2D(((0.0,0.0),(1000.0,0.0),(1399.99999999987,2000.0),(1000.0,4000.0),(0.0,4000.0),(-400.0,2000.0),(0.0,0.0)));
 #310= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,'Slab Perim',#308);
 #311= IFCMATERIALLAYERSETUSAGE(#205,.AXIS3.,.POSITIVE.,-200.0,$);
-#312= IFCRELASSOCIATESMATERIAL('2MIIPXQZL7_A5EvqV2nKwJ',$,'MatAssoc','Material Associates',(#302),#311);
+#312= IFCRELASSOCIATESMATERIAL('2G61d9aMb8x9cHuBUubu7d',$,'MatAssoc','Material Associates',(#302),#311);
 #313= IFCDIRECTION((0.0,0.0,1.0));
 #314= IFCEXTRUDEDAREASOLID(#310,$,#313,200.0);
 #315= IFCSHAPEREPRESENTATION($,'Body','SweptSolid',(#314));

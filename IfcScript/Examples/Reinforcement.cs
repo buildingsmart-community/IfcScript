@@ -59,7 +59,6 @@ namespace IFC.Examples
 				for (int icounter = 25; icounter < 5000; icounter += 150)
 				{
 					reinforcingBarType.GenerateMappedItemElement(elementAssembly, new Plane(new Point3d(0,icounter,0),Vector3d.XAxis,Vector3d.YAxis), new IfcElemParams());
-
 				}
 			}
 			else
