@@ -32,7 +32,8 @@ namespace IFCExamples
 			new BeamExtruded().GenerateExample(path);
 			new BeamTessellated().GenerateExample(path);
 			new IndexedColourMap().GenerateExample(path);
-			new BeamUnitTestsVarying().GenerateExample(path);
+			new BeamUnitTestsVaryingProfile().GenerateExample(path);
+			new BeamUnitTestsVaryingPath().GenerateExample(path);
 			new Slab().GenerateExample(path);
 			new Wall().GenerateExample(path);
 			new BasinAdvancedBrep().GenerateExample(path);
