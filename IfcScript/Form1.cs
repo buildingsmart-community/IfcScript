@@ -40,9 +40,9 @@ namespace IFCExamples
 			new SlabOpenings().GenerateExample(path);
 			new Wall().GenerateExample(path);
 			//todo wall with Openings
+			new Bath().GenerateExample(path);
 			new BasinAdvancedBrep().GenerateExample(path);
 			new BasinBrep().GenerateExample(path);
-			new BasinCSG().GenerateExample(path);
 			new BasinTessellation().GenerateExample(path);
 			new ReinforcingBar().GenerateExample(path);
 			new ReinforcingAssembly().GenerateExample(path);

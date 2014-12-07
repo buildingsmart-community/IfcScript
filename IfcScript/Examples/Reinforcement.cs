@@ -6,10 +6,6 @@ using System.Drawing;
 using GGYM.IFC;
 using Rhino.Geometry;
  
-using Coord3d = System.Tuple<double, double, double>;
-using CoordIndex = System.Tuple<int, int, int>;
-
-
 namespace IFC.Examples
 {
 	internal class ReinforcingAssembly : IFCExampleBase
@@ -35,13 +31,25 @@ namespace IFC.Examples
 
 			md.NextObjectRecord = 200;
 			IfcMaterial material = new IfcMaterial(md, "ReinforcingSteel", "", "");
+			List<Point3d> points = new List<Point3d>() { new Point3d(-69.0, 0.0, -122.0), new Point3d(-69.0, 0.0, -79.0), new Point3d(-54.9411254969541, 0.0, -45.0588745030455), new Point3d(-21.0, 0.0, -31.0), new Point3d(21.0, 0.0, -31.0), new Point3d(54.9411254969541, 0.0, -45.0588745030455), new Point3d(69.0, 0.0, -78.9999999999999), new Point3d(69.0, 0.00000000000000089, -321.0), new Point3d(54.9939785957165, 1.21791490472034, -354.941125496954), new Point3d(21.1804517666074, 4.15822158551252, -369.0), new Point3d(-20.6616529376114, 7.79666547283599, -369.0), new Point3d(-54.4751797667207, 10.7369721536282, -354.941125496954), new Point3d(-68.4812011710042, 11.9548870583485, -321.0), new Point3d(-69.0, 12.0, -79.0), new Point3d(-54.9411254969541, 12.0, -45.0588745030455), new Point3d(-21.0, 12.0, -31.0), new Point3d(21.0, 12.0, -31.0), new Point3d(54.9411254969541, 12.0, -45.0588745030455), new Point3d(69.0, 12.0, -78.9999999999999) };
+			PolyCurve pc = new PolyCurve();
+			pc.Append(new Line(points[0],points[1]));
+			pc.Append(new Arc(points[1],points[2],points[3] ));
+			pc.Append(new Line(points[3],points[4]));
+			pc.Append(new Arc(points[4],points[5],points[6] ));
+			pc.Append(new Line(points[6],points[7]));
+			pc.Append(new Arc(points[7],points[8],points[9] ));
+			pc.Append(new Line(points[9],points[10]));
+			pc.Append(new Arc(points[10],points[11],points[12] ));
+			pc.Append(new Line(points[12],points[13]));
+			pc.Append(new Arc(points[13],points[14],points[15] ));
+			pc.Append(new Line(points[15],points[16]));
+			pc.Append(new Arc(points[16],points[17],points[18] ));
+			pc.Append(new Line(points[18],points[0]));
+			IfcBoundedCurve directrix = IfcBoundedCurve.ConvertCurve(md,pc);
 
-			List<Coord3d> coords3d = new List<Coord3d>() { new Coord3d(-69.0, 0.0, -122.0), new Coord3d(-69.0, 0.0, -79.0), new Coord3d(-54.9411254969541, 0.0, -45.0588745030455), new Coord3d(-21.0, 0.0, -31.0), new Coord3d(21.0, 0.0, -31.0), new Coord3d(54.9411254969541, 0.0, -45.0588745030455), new Coord3d(69.0, 0.0, -78.9999999999999), new Coord3d(69.0, 0.00000000000000089, -321.0), new Coord3d(54.9939785957165, 1.21791490472034, -354.941125496954), new Coord3d(21.1804517666074, 4.15822158551252, -369.0), new Coord3d(-20.6616529376114, 7.79666547283599, -369.0), new Coord3d(-54.4751797667207, 10.7369721536282, -354.941125496954), new Coord3d(-68.4812011710042, 11.9548870583485, -321.0), new Coord3d(-69.0, 12.0, -79.0), new Coord3d(-54.9411254969541, 12.0, -45.0588745030455), new Coord3d(-21.0, 12.0, -31.0), new Coord3d(21.0, 12.0, -31.0), new Coord3d(54.9411254969541, 12.0, -45.0588745030455), new Coord3d(69.0, 12.0, -78.9999999999999), new Coord3d(69.0, 12.0, -122.0) };
-			List<IfcSegmentIndexSelect> segmentIndices = new List<IfcSegmentIndexSelect>() {new IfcLineIndex(1,2),new IfcArcIndex(2,3,4),new IfcLineIndex(4,5),new IfcArcIndex(5,6,7),new IfcLineIndex(7,8),new IfcArcIndex(8,9,10),new IfcLineIndex(10,11),new IfcArcIndex(11,12,13),new IfcLineIndex(13,14),new IfcArcIndex(14,15,16),new IfcLineIndex(16,17),new IfcArcIndex(17,18,19),new IfcLineIndex(19,20)};
-			
-			IfcIndexedPolyCurve indexedPolyCurve = new IfcIndexedPolyCurve(new IfcCartesianPointList3D(md, coords3d), segmentIndices);
 			double barDiameter = 12, area = Math.PI * Math.Pow( barDiameter,2) / 4;
-			IfcSweptDiskSolid sweptDiskSolid = new IfcSweptDiskSolid(indexedPolyCurve, barDiameter/2.0, 0);
+			IfcSweptDiskSolid sweptDiskSolid = new IfcSweptDiskSolid(directrix, barDiameter/2.0, 0);
 			IfcRepresentationMap representationMap = new IfcRepresentationMap(sweptDiskSolid);
 			string shapeCode = ""; //Todo
 			IfcReinforcingBarType reinforcingBarType = new IfcReinforcingBarType(md, new IfcElemTypeParams("", "12 Diameter Ligature", "", "", ""), material,representationMap, null, IfcReinforcingBarTypeEnum.LIGATURE, barDiameter, area, 1150, IfcReinforcingBarSurfaceEnum.TEXTURED, shapeCode, null);
