@@ -27,7 +27,6 @@ namespace IFC.Examples
 	{
 		protected void GenerateData(STPModelData md, IfcBuilding building,bool tessellated)
 		{	 
-			md.NextObjectRecord = 200; 
 			IfcBeam beam = GenerateIPE200(md, building, tessellated);
 		}
 

@@ -31,6 +31,7 @@ namespace IFCExamples
 				Directory.CreateDirectory(path);
 			new BeamExtruded().GenerateExample(path);
 			new BeamTessellated().GenerateExample(path);
+			
 			new IndexedColourMap().GenerateExample(path);
 			new BeamUnitTestsVaryingProfile().GenerateExample(path);
 			new BeamUnitTestsVaryingPath().GenerateExample(path);
@@ -46,6 +47,7 @@ namespace IFCExamples
 			new BasinTessellation().GenerateExample(path);
 			new ReinforcingBar().GenerateExample(path);
 			new ReinforcingAssembly().GenerateExample(path);
+			new Column().GenerateExample(path);
 		}
 	}
 }

@@ -6,17 +6,12 @@ using System.Drawing;
 using GGYM.IFC;
 using Rhino.Geometry;
  
-using Coord3d = System.Tuple<double, double, double>;
-using CoordIndex = System.Tuple<int, int, int>;
-
-
 namespace IFC.Examples
 {
 	class Wall : IFCExampleBase
 	{
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
-			md.NextObjectRecord = 200;
 			IfcMaterial masonryFinish = new IfcMaterial(md, "Masonry - Brick - Brown", "", "");
 			IfcMaterial masonry = new IfcMaterial(md, "Masonry", "", "");
 			IfcMaterialLayer layerFinish = new IfcMaterialLayer(md, masonryFinish, 110, false, "Finish", "", "", 0);

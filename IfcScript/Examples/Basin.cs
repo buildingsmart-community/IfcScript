@@ -38,7 +38,6 @@ namespace IFC.Examples
 		internal enum ShapeRep { AdvancedBrep, Brep, Tessellation } //,CSG, ClosedShell
 		internal static void GenerateBasin(ShapeRep shapeRep, STPModelData md, IfcBuilding building)
 		{
-			md.NextObjectRecord = 200;
 			IfcRepresentationMap representationMap = null;
 			if (shapeRep == ShapeRep.AdvancedBrep)
 			{

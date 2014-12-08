@@ -12,7 +12,6 @@ namespace IFC.Examples
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
 			IfcMaterial material = new IfcMaterial(md,"S355JR","","Steel");
-			md.NextObjectRecord = 100;
 			string name = "IPE200";
 			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(md,IfcProfileTypeEnum.AREA,name,null,200,100,5.6,8.5,12,0,0);
 			IfcMaterialProfile materialProfile = new IfcMaterialProfile(md,name,"",material,ipe200,0,"");
@@ -32,7 +31,6 @@ namespace IFC.Examples
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
 			IfcMaterial material = new IfcMaterial(md, "S355JR", "", "Steel");
-			md.NextObjectRecord = 100;
 			string name = "IPE200";
 			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(md, IfcProfileTypeEnum.AREA, name, null, 200, 100, 5.6, 8.5, 12, 0, 0);
 			IfcMaterialProfile materialProfile = new IfcMaterialProfile(md, name, "", material, ipe200, 0, "");
@@ -48,7 +46,6 @@ namespace IFC.Examples
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
 			IfcMaterial material = new IfcMaterial(md, "S355JR", "", "Steel");
-			md.NextObjectRecord = 100;
 			string name = "IPE200";
 			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(md, IfcProfileTypeEnum.AREA, name, null, 200, 100, 5.6, 8.5, 12, 0, 0);
 			IfcMaterialProfile materialProfile = new IfcMaterialProfile(md, name, "", material, ipe200, 0, "");

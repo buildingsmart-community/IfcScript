@@ -14,7 +14,6 @@ namespace IFC.Examples
 	{
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
-			md.NextObjectRecord = 200;
 			List<Point3d> points = new List<Point3d>() { new Point3d(0, 0, 0), new Point3d(1000, 0, 0), new Point3d(1000, 1000, 0), new Point3d(0, 1000, 0), new Point3d(0, 0, 2000), new Point3d(1000, 0, 2000), new Point3d(1000, 1, 2000), new Point3d(0, 1000, 2000) };
 			IfcCartesianPointList3D cartesianPointList3D = new IfcCartesianPointList3D(md, points);
 			List<CoordIndex> coordIndex = new List<CoordIndex>() { new CoordIndex(1, 6, 5), new CoordIndex(1, 2, 6), new CoordIndex(6, 2, 7), new CoordIndex(7, 2, 3), new CoordIndex(7, 8, 6), new CoordIndex(6, 8, 5), new CoordIndex(5, 8, 1), new CoordIndex(1, 8, 4), new CoordIndex(4, 2, 1), new CoordIndex(2, 4, 3), new CoordIndex(4, 8, 7), new CoordIndex(7, 3, 4) };

@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Examples\Basin.cs" />
     <Compile Include="Examples\Bath.cs" />
+    <Compile Include="Examples\Column.cs" />
     <Compile Include="Examples\Reinforcement.cs" />
     <Compile Include="Examples\Slab.cs" />
     <Compile Include="Examples\Wall.cs" />

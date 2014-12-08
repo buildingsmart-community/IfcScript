@@ -29,7 +29,6 @@ namespace IFC.Examples
 			IfcDocumentReference documentReference = new IfcDocumentReference(md, "", "MyReinforcementCode", "MyCodeISO3766", "", null);
 			IfcRelAssociatesDocument associatesDocument = new IfcRelAssociatesDocument(md.Project, documentReference);	
 
-			md.NextObjectRecord = 200;
 			IfcMaterial material = new IfcMaterial(md, "ReinforcingSteel", "", "");
 			List<Point3d> points = new List<Point3d>() { new Point3d(-69.0, 0.0, -122.0), new Point3d(-69.0, 0.0, -79.0), new Point3d(-54.9411254969541, 0.0, -45.0588745030455), new Point3d(-21.0, 0.0, -31.0), new Point3d(21.0, 0.0, -31.0), new Point3d(54.9411254969541, 0.0, -45.0588745030455), new Point3d(69.0, 0.0, -78.9999999999999), new Point3d(69.0, 0.00000000000000089, -321.0), new Point3d(54.9939785957165, 1.21791490472034, -354.941125496954), new Point3d(21.1804517666074, 4.15822158551252, -369.0), new Point3d(-20.6616529376114, 7.79666547283599, -369.0), new Point3d(-54.4751797667207, 10.7369721536282, -354.941125496954), new Point3d(-68.4812011710042, 11.9548870583485, -321.0), new Point3d(-69.0, 12.0, -79.0), new Point3d(-54.9411254969541, 12.0, -45.0588745030455), new Point3d(-21.0, 12.0, -31.0), new Point3d(21.0, 12.0, -31.0), new Point3d(54.9411254969541, 12.0, -45.0588745030455), new Point3d(69.0, 12.0, -78.9999999999999) };
 			PolyCurve pc = new PolyCurve();

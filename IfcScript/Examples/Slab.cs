@@ -30,7 +30,6 @@ namespace IFC.Examples
 	{
 		internal static void GenerateData(STPModelData md, IfcBuilding building,bool openings)
 		{
-			md.NextObjectRecord = 200;
 			IfcMaterial concrete = new IfcMaterial(md, "Concrete", "", "");
 			int thickness = 200;
 			IfcMaterialLayer materialLayer = new IfcMaterialLayer(md, concrete, thickness, false, "Core", "", "", 0);
