@@ -4,7 +4,7 @@ intended to concentrate on samples and unit tests demonstrating
 features and improvements implemented for this schema.
 
 You can find an introduction and explanation of the project here
-http://youtu.be/dMs4DvOvwsY
+https://www.youtube.com/watch?v=0g3rTPQKONE&list=UU01FBzTNN-umc7w1-MYnABw
 
 It uses the Geometry Gym library for generating the classes and files,
 essentially as a series of constructors.  You can contact Jon for details
