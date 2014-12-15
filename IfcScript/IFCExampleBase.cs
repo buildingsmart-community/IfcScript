@@ -10,9 +10,9 @@ namespace IFC
 {
 	class IFCExampleBase
 	{
-		public void GenerateExample(string path) 
+		public void GenerateExample(string path,ModelView modelView) 
 		{
-			STPModelData md = new STPModelData(false,Schema.IFC4A1);
+			STPModelData md = new STPModelData(false,modelView);
 			md.NextObjectRecord = 50;
 			IfcBuilding building = new IfcBuilding(md, "IfcBuilding", null, "");
 			//building.Comment = "if the building is the uppermost spatial structure element it defines the absolute position";
