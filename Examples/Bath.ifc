@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-16T08:03:46',
+/* time_stamp */ '2014-12-16T08:58:32',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -50,7 +50,7 @@ DATA;
 #214= IFCMATERIAL('Ceramic',$,$);
 #215= IFCRELASSOCIATESMATERIAL('0Pkhszwjv1qRMYyCFg9fjB',$,'MatAssoc','Material Associates',(#217),#214);
 #217= IFCSANITARYTERMINALTYPE('1HarmwaPv3OeJSXpaoPKpg',$,'Bath',$,$,$,(#210),$,$,.BATH.);
-#218= IFCRELDEFINESBYTYPE('1RPzL7XpLEOf67VbSU1AKx',$,'Bath',$,(#225),#217);
+#218= IFCRELDEFINESBYTYPE('1lO$X3e3j9lfVMhNy4MzKB',$,'Bath',$,(#225),#217);
 #219= IFCDIRECTION((1.0,0.0,0.0));
 #220= IFCDIRECTION((0.0,1.0,0.0));
 #221= IFCCARTESIANPOINT((0.0,0.0,0.0));

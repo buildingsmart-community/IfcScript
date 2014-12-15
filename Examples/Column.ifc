@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-16T08:03:46',
+/* time_stamp */ '2014-12-16T08:58:33',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -20,32 +20,32 @@ DATA;
 #4= IFCDIRECTION((0.0,1.0));
 #5= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
 #6= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
-#50= IFCBUILDING('0JxML7mYnAaORvThhuI8IS',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#50= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
 #51= IFCLOCALPLACEMENT($,#52);
 #52= IFCAXIS2PLACEMENT3D(#53,$,$);
 #53= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('0ny2nsbu936BQIyg6YuuBH',$,'Building','Building Container for Elements',(#210),#50);
+#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#210),#50);
 #57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
-#100= IFCPROJECT('2Met8jg557neIlVDHv5_I4',$,'IfcProject',$,$,'IfcProject',$,(#1),#101);
+#100= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,'IfcProject',$,(#1),#101);
 #101= IFCUNITASSIGNMENT((#102,#103,#104));
 #102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
 #104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
-#105= IFCRELAGGREGATES('0vhAZG70PCO9VZhBMOLlxl',$,'Project Container','Project Container for Buildings',#100,(#50));
+#105= IFCRELAGGREGATES('091a6ewbvCMQ2Vyiqspa7a',$,'Project Container','Project Container for Buildings',#100,(#50));
 #200= IFCMATERIAL('S355JR',$,'Steel');
 #203= IFCISHAPEPROFILEDEF(.AREA.,'IPE200',$,100.0,200.0,5.6,8.5,12.0,$,$);
 #204= IFCMATERIALPROFILE('IPE200',$,#200,#203,0.0,$);
 #206= IFCMATERIALPROFILESET('IPE200',$,(#204),$);
-#207= IFCRELASSOCIATESMATERIAL('02rjvzV8TEbP7c$2ckIW3I',$,'MatAssoc','Material Associates',(#208),#206);
-#208= IFCCOLUMNTYPE('0VkLrexbv7TP$Ow9kz7XCQ',$,'IPE200',$,$,$,$,$,$,.COLUMN.);
-#209= IFCRELDEFINESBYTYPE('1Of5o_u7X7QQyrqygGIEPM',$,'IPE200',$,(#210),#208);
-#210= IFCCOLUMNSTANDARDCASE('0zs_X8cZf87RpAoUuFLYP0',$,$,$,$,#211,#224,$,$);
+#207= IFCRELASSOCIATESMATERIAL('3CPVQnwtP0zvwuKhhDA6zA',$,'MatAssoc','Material Associates',(#208),#206);
+#208= IFCCOLUMNTYPE('2SglL_n1v54BwfBa0nSwpL',$,'IPE200',$,$,$,$,$,$,.COLUMN.);
+#209= IFCRELDEFINESBYTYPE('0AjZ3ZzCzEF9cbVimFsKKO',$,'IPE200',$,(#210),#208);
+#210= IFCCOLUMNSTANDARDCASE('38Bsr4UCbBJRa$TMe1LAgS',$,$,$,$,#211,#224,$,$);
 #211= IFCLOCALPLACEMENT($,#212);
 #212= IFCAXIS2PLACEMENT3D(#213,$,#214);
 #213= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #214= IFCDIRECTION((0.0,-1.0,0.0));
 #215= IFCMATERIALPROFILESETUSAGE(#206,5,$);
-#216= IFCRELASSOCIATESMATERIAL('36ZwWBVEj1SxjketelL7JJ',$,'MatAssoc','Material Associates',(#210),#215);
+#216= IFCRELASSOCIATESMATERIAL('3rxU1bavXFPA8i61EBdfVh',$,'MatAssoc','Material Associates',(#210),#215);
 #217= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #218= IFCCARTESIANPOINT((0.0,0.0,2000.0));
 #219= IFCPOLYLINE((#217,#218));

@@ -19,9 +19,9 @@ namespace IFC.Examples
 			IfcCsgSolid csgSolid = new IfcCsgSolid(booleanResult);
 			IfcRepresentationMap representationMap = new IfcRepresentationMap(csgSolid);
 			IfcMaterial ceramic = new IfcMaterial(md, "Ceramic", "", "");
-			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(md, new IfcElemTypeParams("","Bath","","",""), ceramic, representationMap, null, IfcSanitaryTerminalTypeEnum.BATH);
-			sanitaryTerminalType.GenerateMappedItemElement(building, Plane.WorldXY, new IfcElemParams());
-
+			ceramic.Associates.GlobalId = "0Pkhszwjv1qRMYyCFg9fjB";
+			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(md, new IfcElemTypeParams("1HarmwaPv3OeJSXpaoPKpg", "Bath", "", "", ""), ceramic, representationMap, null, IfcSanitaryTerminalTypeEnum.BATH);
+			sanitaryTerminalType.GenerateMappedItemElement(building, Plane.WorldXY, new IfcElemParams("3$$o7C03j0KQeLnoj018fc","","","",""));
 		}
 	}
 }
