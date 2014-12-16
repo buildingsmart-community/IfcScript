@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-16T08:58:33',
+/* time_stamp */ '2014-12-16T17:11:11',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -14,12 +14,14 @@ FILE_SCHEMA (('IFC4'));
 ENDSEC;
 
 DATA;
+/* general entities required for all IFC data sets, defining the context for the exchange */
 #1= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.0001,#2,#4);
 #2= IFCAXIS2PLACEMENT3D(#3,$,$);
 #3= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #4= IFCDIRECTION((0.0,1.0));
 #5= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
 #6= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
+/* each IFC data set containing elements in a building context has to include a building */
 #50= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
 #51= IFCLOCALPLACEMENT($,#52);
 #52= IFCAXIS2PLACEMENT3D(#53,$,$);
@@ -151,16 +153,16 @@ DATA;
 #315= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #316= IFCSHAPEREPRESENTATION(#6,'Body','AdvancedBrep',(#312));
 #317= IFCMATERIAL('Ceramic',$,$);
-#318= IFCRELASSOCIATESMATERIAL('24NXJ9zDr4HQM4CLr0v$lx',$,'MatAssoc','Material Associates',(#320),#317);
-#320= IFCSANITARYTERMINALTYPE('3zvqrxMk5AQRkEYwWvMowS',$,'Wash Hand Basin',$,$,$,(#313),$,$,.WASHHANDBASIN.);
-#321= IFCRELDEFINESBYTYPE('04g2KX_YrBahKmYksZGNan',$,'Wash Hand Basin',$,(#328),#320);
+#318= IFCRELASSOCIATESMATERIAL('0Pkhszwjv1qRMYyCFg9fjB',$,'MatAssoc','Material Associates',(#320),#317);
+#320= IFCSANITARYTERMINALTYPE('2Vk5O9OO94lfvLVH2WXKBZ',$,'Wash Hand Basin',$,$,$,(#313),$,$,.WASHHANDBASIN.);
+#321= IFCRELDEFINESBYTYPE('01OIK6g$5EVxvitdj$pQSU',$,'Wash Hand Basin',$,(#328),#320);
 #322= IFCDIRECTION((1.0,0.0,0.0));
 #323= IFCDIRECTION((0.0,1.0,0.0));
 #324= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #325= IFCCARTESIANTRANSFORMATIONOPERATOR3D(#322,#323,#324,1.0,#326);
 #326= IFCDIRECTION((0.0,0.0,1.0));
 #327= IFCMAPPEDITEM(#313,#325);
-#328= IFCSANITARYTERMINAL('2AHry2xnX88eOPaHMU7cjp',$,$,$,$,#55,#329,$,.NOTDEFINED.);
+#328= IFCSANITARYTERMINAL('0dOOwKTsn8I8gwbP3LM1Yz',$,$,$,$,#55,#329,$,.NOTDEFINED.);
 #329= IFCPRODUCTDEFINITIONSHAPE($,$,(#330));
 #330= IFCSHAPEREPRESENTATION(#6,'Body','MappedRepresentation',(#327));
 ENDSEC;

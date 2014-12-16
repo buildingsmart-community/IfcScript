@@ -19,9 +19,12 @@ namespace IFC.Examples
 			IfcMaterialLayer structure = new IfcMaterialLayer(md, masonry, 110, false, "Core", "", "", 0);
 			string name = "Double Brick - 270";
 			IfcMaterialLayerSet materialLayerSet = new IfcMaterialLayerSet(md, new List<IfcMaterialLayer>() { layerFinish, airInfiltrationBarrier, structure }, name, "");
+			materialLayerSet.Associates.GlobalId = "36U74BIPDD89cYkx9bkV$Y";
 			md.NextObjectRecord = 300;
-			IfcWallType wallType = new IfcWallType(md, new IfcElemTypeParams("", name, "", "", ""), materialLayerSet, null, IfcWallTypeEnum.NOTDEFINED);
-			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, null, wallType, new Line(0, 0, 0, 5000, 0, 0), 2000, 0, true, null);
+			IfcWallType wallType = new IfcWallType(md, new IfcElemTypeParams("2aG1gZj7PD2PztLOx2$IVX", name, "", "", ""), materialLayerSet, null, IfcWallTypeEnum.NOTDEFINED);
+			wallType.ObjectTypeOf.GlobalId = "1$EkFElNT8TB_VUVG1FtMe";
+			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, new IfcElemParams("0DWgwt6o1FOx7466fPk$jl","","","",""), wallType, new Line(0, 0, 0, 5000, 0, 0), 2000, 0, true, null);
+			wallStandardCase.Material.Associates.GlobalId = "1BYoVhjtLADPUZYzipA826";
 		}
 	}
 	

@@ -467,8 +467,10 @@ namespace IFC.Examples
 				representationMap = new IfcRepresentationMap(triangulatedFaceSet);
 			}
 			IfcMaterial ceramic = new IfcMaterial(md, "Ceramic", "", "");
-			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(md, new IfcElemTypeParams("","Wash Hand Basin","","",""), ceramic, representationMap, null, IfcSanitaryTerminalTypeEnum.WASHHANDBASIN);
-			sanitaryTerminalType.GenerateMappedItemElement(building, Plane.WorldXY, new IfcElemParams());
+			ceramic.Associates.GlobalId = "0Pkhszwjv1qRMYyCFg9fjB";
+			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(md, new IfcElemTypeParams("2Vk5O9OO94lfvLVH2WXKBZ", "Wash Hand Basin", "", "", ""), ceramic, representationMap, null, IfcSanitaryTerminalTypeEnum.WASHHANDBASIN);
+			sanitaryTerminalType.ObjectTypeOf.GlobalId = "01OIK6g$5EVxvitdj$pQSU";
+			sanitaryTerminalType.GenerateMappedItemElement(building, Plane.WorldXY, new IfcElemParams("0dOOwKTsn8I8gwbP3LM1Yz","","","",""));
 		}
 		
 	}
