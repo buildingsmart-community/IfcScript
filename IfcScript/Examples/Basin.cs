@@ -38,11 +38,13 @@ namespace IFC.Examples
 		internal enum ShapeRep { AdvancedBrep, Brep, Tessellation } //,CSG, ClosedShell
 		internal static void GenerateBasin(ShapeRep shapeRep, STPModelData md, IfcBuilding building)
 		{
+			md.NextObjectRecord = 500;
 			IfcRepresentationMap representationMap = null;
 			if (shapeRep == ShapeRep.AdvancedBrep)
 			{
 				#region advancedBrep
 				IfcCartesianPoint cp1 = new IfcCartesianPoint(md, 0.0, 253.099263998677, 0.0);
+				cp1.Comments.Add("geometry definition of the advanced brep");
 				IfcCartesianPoint cp2 = new IfcCartesianPoint(md, 0.0, 247.792422124388, -83.9999999999991);
 				IfcCartesianPoint cp3 = new IfcCartesianPoint(md, 0.0, 268.843232748677, 0.0);
 				IfcCartesianPoint cp4 = new IfcCartesianPoint(md, 0.0, 247.792422124388, -93.9999999999991);
@@ -338,6 +340,8 @@ namespace IFC.Examples
 				IfcTriangulatedFaceSet triangulatedFaceSet = new IfcTriangulatedFaceSet(md, cartesianPointList3D, null, true, coordIndex, null);
 				representationMap = new IfcRepresentationMap(triangulatedFaceSet);
 			}
+
+			md.NextObjectRecord = 200;
 			IfcMaterial ceramic = new IfcMaterial(md, "Ceramic", "", "");
 			ceramic.Associates.GlobalId = "0Pkhszwjv1qRMYyCFg9fjB";
 			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(md, new IfcElemTypeParams("2Vk5O9OO94lfvLVH2WXKBZ", "Wash Hand Basin", "", "", ""), ceramic, representationMap, null, IfcSanitaryTerminalTypeEnum.WASHHANDBASIN);

@@ -49,6 +49,12 @@ namespace IFCExamples
 			new ReinforcingBar().GenerateExample(path, ModelView.IFC4DesignTransfer);
 			new ReinforcingAssembly().GenerateExample(path, ModelView.IFC4DesignTransfer);
 			new Column().GenerateExample(path, ModelView.IFC4DesignTransfer);
+
+			//Possible Examples to add
+			// IfcBuildingStorey with datums and local placements relative to building
+			// IfcProjectLibrary
+			// GeoSpatial SetOut of Building
+			//
 		}
 	}
 }

@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-18T03:45:31',
+/* time_stamp */ '2014-12-18T07:37:11',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -21,7 +21,7 @@ DATA;
 #4= IFCDIRECTION((0.0,1.0));
 #5= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
 #6= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
-/* each IFC data set containing elements in a building context has to include a building */
+/* defines the default building (as required as the minimum spatial element)  */
 #50= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
 #51= IFCLOCALPLACEMENT($,#52);
 #52= IFCAXIS2PLACEMENT3D(#53,$,$);
@@ -83,7 +83,7 @@ DATA;
 #250= IFCPRODUCTDEFINITIONSHAPE($,$,(#251));
 #251= IFCSHAPEREPRESENTATION(#6,'Body','MappedRepresentation',(#248));
 #252= IFCLOCALPLACEMENT($,#52);
-#253= IFCRELAGGREGATES('1VYOUGuz1CbRH9kckv9LHP',$,'BEAMSTANDARDCASE Container','BEAMSTANDARDCASE Container for Elements',#224,(#242));
+#253= IFCRELAGGREGATES('1iZEAT4dP0jA6SjBkGffUf',$,'BEAMSTANDARDCASE Container','BEAMSTANDARDCASE Container for Elements',#224,(#242));
 #254= IFCRELAGGREGATES('1WdB196Kb72f_pKgj5rklU',$,'ELEMENTASSEMBLY Container','ELEMENTASSEMBLY Container for Elements',#242,(#249,#261,#271,#281,#291,#301,#311,#321,#331,#341,#351,#361,#371,#381,#391,#401,#411,#421,#431,#441,#451,#461,#471,#481,#491,#501,#511,#521,#531,#541,#551,#561,#571,#581));
 #255= IFCDIRECTION((1.0,0.0,0.0));
 #256= IFCDIRECTION((0.0,1.0,0.0));
