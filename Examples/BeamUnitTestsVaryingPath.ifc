@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-16T19:25:32',
+/* time_stamp */ '2014-12-18T02:13:27',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -62,7 +62,7 @@ DATA;
 #228= IFCBEAMSTANDARDCASE('1zqFh80l11VgfEm3ZWh6Xv',$,'Revolution',$,$,#229,#249,$,$);
 #229= IFCLOCALPLACEMENT($,#230);
 #230= IFCAXIS2PLACEMENT3D(#231,#232,#233);
-#231= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#231= IFCCARTESIANPOINT((0.0,0.0,400.0));
 #232= IFCDIRECTION((-0.38461538,0.92307692,0.0));
 #233= IFCDIRECTION((-0.92307692,-0.38461538,0.0));
 #234= IFCTRIMMEDCURVE(#240,(IFCPARAMETERVALUE(0.0),#235),(IFCPARAMETERVALUE(0.789582239399523),#236),.T.,.PARAMETER.);

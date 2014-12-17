@@ -3,7 +3,7 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-16T17:12:40',
+/* time_stamp */ '2014-12-18T03:27:11',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
 /* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
@@ -35,10 +35,10 @@ DATA;
 #103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
 #104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
 #105= IFCRELAGGREGATES('091a6ewbvCMQ2Vyiqspa7a',$,'Project Container','Project Container for Buildings',#100,(#50));
-#200= IFCCARTESIANPOINTLIST3D(((0.0,0.0,0.0),(1000.0,0.0,0.0),(1000.0,1000.0,0.0),(0.0,1000.0,0.0),(0.0,0.0,2000.0),(1000.0,0.0,2000.0),(1000.0,1.0,2000.0),(0.0,1000.0,2000.0)));
+#200= IFCCARTESIANPOINTLIST3D(((0.0,0.0,0.0),(1000.0,0.0,0.0),(1000.0,1000.0,0.0),(0.0,1000.0,0.0),(0.0,0.0,2000.0),(1000.0,0.0,2000.0),(1000.0,1000.0,2000.0),(0.0,1000.0,2000.0)));
 #201= IFCTRIANGULATEDFACESET(#200,$,.T.,((1,6,5),(1,2,6),(6,2,7),(7,2,3),(7,8,6),(6,8,5),(5,8,1),(1,8,4),(4,2,1),(2,4,3),(4,8,7),(7,3,4)),$);
-#202= IFCCOLOURRGBLIST(((255.0,0.0,0.0),(0.0,128.0,0.0),(255.0,255.0,0.0)));
-#203= IFCINDEXEDCOLOURMAP(#201,$,#202,(1,1,2,2,3,3,1,1,1,1,1));
+#202= IFCCOLOURRGBLIST(((1.0,0.0,0.0),(0.0,0.501960784313725,0.0),(1.0,1.0,0.0)));
+#203= IFCINDEXEDCOLOURMAP(#201,$,#202,(1,1,2,2,3,3,1,1,1,1,1,1));
 #300= IFCBUILDINGELEMENTPROXY('25c34fWeL1NQux73WfnXox',$,'BuildingElementProxy',$,$,#55,#301,$,.NOTDEFINED.);
 #301= IFCPRODUCTDEFINITIONSHAPE($,$,(#302));
 #302= IFCSHAPEREPRESENTATION(#6,'Body','Tessellation',(#201));

@@ -33,7 +33,7 @@ namespace IFC.Examples
 			IfcBeamType beamType = GetParametericIPE200(md);  
 			IfcBeamStandardCase beamStandardCase = new IfcBeamStandardCase(building, new IfcElemParams("0a_qfeQLDA8e5qT$Do6J_t", "Extrusion", "", "", ""), beamType, new Line(0, 0, 0, 0, 1000, 0), Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, new List<Plane>());
 			beamStandardCase.Material.Associates.GlobalId = "2uxxMWfA51AAznk5bQJylf";
-			IfcBeamStandardCase beamStandardCase2 = new IfcBeamStandardCase(building, new IfcElemParams("1zqFh80l11VgfEm3ZWh6Xv", "Revolution", "", "", ""), beamType, new Arc(new Point3d(0, 0, 0), new Point3d(-100, 500, 0), new Point3d(0, 1000, 0)), Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, new List<Plane>());
+			IfcBeamStandardCase beamStandardCase2 = new IfcBeamStandardCase(building, new IfcElemParams("1zqFh80l11VgfEm3ZWh6Xv", "Revolution", "", "", ""), beamType, new Arc(new Point3d(0, 0,400), new Point3d(-100, 500, 400), new Point3d(0, 1000, 400)), Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, new List<Plane>());
 		}
 	}
 
