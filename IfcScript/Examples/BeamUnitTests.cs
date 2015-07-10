@@ -17,7 +17,7 @@ namespace IFC.Examples
 			md.NextObjectRecord = 300;
 			string name = "CHS219.1x6.3"; 
 			IfcCircleHollowProfileDef chs219x6 = new IfcCircleHollowProfileDef(md, IfcProfileTypeEnum.AREA, name, null, 219.1 / 2.0, 6.3);
-			IfcMaterialProfileSet materialProfileSet = beamType.Material as IfcMaterialProfileSet;
+			IfcMaterialProfileSet materialProfileSet = beamType.MaterialSelect as IfcMaterialProfileSet;
 			IfcMaterialProfile materialProfile2 = new IfcMaterialProfile(md, name, "", materialProfileSet.MaterialProfiles[0].Material, chs219x6, 0, ""); 
 			IfcBeamType beamType2 = new IfcBeamType(md, new IfcElemTypeParams("3l_OKNTJr4yBOR5rYl6b9w", name, "", "", ""), materialProfile2, null, IfcBeamTypeEnum.BEAM);
 			beamType2.ObjectTypeOf.GlobalId = "3LrutsCpn4DPF9Zt4YdIEU";

@@ -24,7 +24,7 @@ namespace IFC.Examples
 			IfcWallType wallType = new IfcWallType(md, new IfcElemTypeParams("2aG1gZj7PD2PztLOx2$IVX", name, "", "", ""), materialLayerSet, null, IfcWallTypeEnum.NOTDEFINED);
 			wallType.ObjectTypeOf.GlobalId = "1$EkFElNT8TB_VUVG1FtMe";
 			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, new IfcElemParams("0DWgwt6o1FOx7466fPk$jl","","","",""), wallType, new Line(0, 0, 0, 5000, 0, 0), 2000, 0, true, null);
-			wallStandardCase.Material.Associates.GlobalId = "1BYoVhjtLADPUZYzipA826";
+			wallStandardCase.MaterialSelect.Associates.GlobalId = "1BYoVhjtLADPUZYzipA826";
 		}
 	}
 	

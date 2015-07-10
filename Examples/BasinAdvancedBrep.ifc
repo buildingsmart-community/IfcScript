@@ -3,11 +3,11 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ '',
-/* time_stamp */ '2014-12-18T07:37:10',
+/* time_stamp */ '2015-07-10T21:12:03',
 /* author */ ('Jon'),
 /* organization */ ('Unknown'),
-/* preprocessor_version */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
-/* originating_system */ 'ggIFC - Exporter by Geometry Gym Pty Ltd',
+/* preprocessor_version */ 'GeomGymIFC by Geometry Gym Pty Ltd',
+/* originating_system */ 'ggIFC v1.0.0.0 - Exporter by Geometry Gym Pty Ltd',
 /* authorization */ 'None');
 
 FILE_SCHEMA (('IFC4'));
@@ -15,20 +15,19 @@ ENDSEC;
 
 DATA;
 /* general entities required for all IFC data sets, defining the context for the exchange */
-#1= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.0001,#2,#4);
-#2= IFCAXIS2PLACEMENT3D(#3,$,$);
-#3= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#1= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.0001,#3,#4);
+#2= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#3= IFCAXIS2PLACEMENT3D(#2,$,$);
 #4= IFCDIRECTION((0.0,1.0));
 #5= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
 #6= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
 /* defines the default building (as required as the minimum spatial element)  */
-#50= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#57);
+#50= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#51,$,$,.ELEMENT.,$,$,#56);
 #51= IFCLOCALPLACEMENT($,#52);
-#52= IFCAXIS2PLACEMENT3D(#53,$,$);
-#53= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#54= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#211),#50);
-#55= IFCLOCALPLACEMENT(#51,#52);
-#57= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
+#52= IFCAXIS2PLACEMENT3D(#2,$,$);
+#53= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#211),#50);
+#54= IFCLOCALPLACEMENT(#51,#52);
+#56= IFCPOSTALADDRESS($,$,$,$,$,$,$,'Unknown',$,$);
 #100= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,'IfcProject',$,(#1),#101);
 #101= IFCUNITASSIGNMENT((#102,#103,#104));
 #102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
@@ -45,7 +44,7 @@ DATA;
 #208= IFCCARTESIANTRANSFORMATIONOPERATOR3D(#205,#206,#207,1.0,#209);
 #209= IFCDIRECTION((0.0,0.0,1.0));
 #210= IFCMAPPEDITEM(#613,#208);
-#211= IFCSANITARYTERMINAL('0dOOwKTsn8I8gwbP3LM1Yz',$,$,$,$,#55,#212,$,.NOTDEFINED.);
+#211= IFCSANITARYTERMINAL('0dOOwKTsn8I8gwbP3LM1Yz',$,$,$,$,#54,#212,$,.NOTDEFINED.);
 #212= IFCPRODUCTDEFINITIONSHAPE($,$,(#213));
 #213= IFCSHAPEREPRESENTATION(#6,'Body','MappedRepresentation',(#210));
 /* geometry definition of the advanced brep */
@@ -162,10 +161,9 @@ DATA;
 #610= IFCADVANCEDFACE((#604,#607),#609,.T.);
 #611= IFCCLOSEDSHELL((#565,#589,#595,#601,#610));
 #612= IFCADVANCEDBREP(#611);
-#613= IFCREPRESENTATIONMAP(#614,#616);
-#614= IFCAXIS2PLACEMENT3D(#615,$,$);
-#615= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#616= IFCSHAPEREPRESENTATION(#6,'Body','AdvancedBrep',(#612));
+#613= IFCREPRESENTATIONMAP(#614,#615);
+#614= IFCAXIS2PLACEMENT3D(#2,$,$);
+#615= IFCSHAPEREPRESENTATION(#6,'Body','AdvancedBrep',(#612));
 ENDSEC;
 
 END-ISO-10303-21;

@@ -12,17 +12,17 @@ namespace IFC.Examples
 	{
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
-			ReinfocingExample.GenerateData(md, building, true);
+			ReinforcingExample.GenerateData(md, building, true);
 		}
 	}
 	internal class ReinforcingBar : IFCExampleBase
 	{
 		protected override void GenerateData(STPModelData md, IfcBuilding building)
 		{
-			ReinfocingExample.GenerateData(md, building, false);
+			ReinforcingExample.GenerateData(md, building, false);
 		}
 	}
-	internal class ReinfocingExample
+	internal class ReinforcingExample
 	{
 		internal static void GenerateData(STPModelData md, IfcBuilding building,bool assembly)
 		{
