@@ -14,11 +14,11 @@ namespace IFC
 		{
 			STPModelData md = new STPModelData(false,modelView);
 			md.NextObjectRecord = 50;
-			IfcBuilding building = new IfcBuilding(md, "39t4Pu3nTC4ekXYRIHJB9W", "IfcBuilding", null, "");
+			IfcBuilding building = new IfcBuilding(md, "IfcBuilding") { GlobalId = "39t4Pu3nTC4ekXYRIHJB9W"};
 			building.ContainsElements[0].GlobalId = "3Sa3dTJGn0H8TQIGiuGQd5";
 			building.Comments.Add("defines the default building (as required as the minimum spatial element) ");
 			md.NextObjectRecord = 100;
-			IfcProject project = new IfcProject(building, "0$WU4A9R19$vKWO$AdOnKA", "IfcProject", "", "", null, GGYM.Units.Length.mm);
+			IfcProject project = new IfcProject(building, "IfcProject", GGYM.Units.Length.mm) { GlobalId = "0$WU4A9R19$vKWO$AdOnKA"};
 			project.IsDecomposedBy[0].GlobalId = "091a6ewbvCMQ2Vyiqspa7a";
 			project.RepresentationContexts[0].Comments.Add("general entities required for all IFC data sets, defining the context for the exchange");
 			md.NextObjectRecord = 200;
@@ -48,14 +48,14 @@ namespace IFC
 						return;
 				}
 			}
-			md.writeFile(filePath); 
+			md.WriteFile(filePath); 
 		}
 		protected virtual void GenerateData(STPModelData md,IfcBuilding building) { }
 
 		protected IfcBeamType GetParametericIPE200(STPModelData md)
 		{
 			IfcMaterialProfile materialProfile = GetParametericIPE200Profile(md);
-			IfcBeamType beamType = new IfcBeamType(md, new IfcElemTypeParams("32b2OtzCP30umNyY5LsCfN", materialProfile.Name, "", "", ""), materialProfile, null, IfcBeamTypeEnum.JOIST);
+			IfcBeamType beamType = new IfcBeamType(materialProfile.Name, materialProfile, IfcBeamTypeEnum.JOIST) { GlobalId = "32b2OtzCP30umNyY5LsCfN" };
 			beamType.ObjectTypeOf.GlobalId = "3s_DqAVvb3LguudTShJHVo";
 			beamType.Material.Associates.GlobalId = "0NkGSIHVT3SeAR6bnw7pSa";
 			return beamType;
@@ -65,7 +65,7 @@ namespace IFC
 			IfcMaterial material = new IfcMaterial(md, "S355JR", "", "Steel");
 			material.Associates.GlobalId = "1oJeVe14nCYf5cL0Mka0KL";
 			string name = "IPE200";
-			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(md, IfcProfileTypeEnum.AREA, name, null, 200, 100, 5.6, 8.5, 12, 0, 0);
+			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(md, name, 200, 100, 5.6, 8.5, 12);
 			return new IfcMaterialProfile(md, name, "", material, ipe200, 0, "");
 		}
 	}

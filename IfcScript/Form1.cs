@@ -30,25 +30,25 @@ namespace IFCExamples
 			string path = Path.Combine(di.FullName, "examples");
 			if (!Directory.Exists(path))
 				Directory.CreateDirectory(path);
-			new BeamExtruded().GenerateExample(path,ModelView.IFC4Reference);
-			new BeamTessellated().GenerateExample(path, ModelView.IFC4Reference);
+			new BeamExtruded().GenerateExample(path,ModelView.Ifc4Reference);
+			new BeamTessellated().GenerateExample(path, ModelView.Ifc4Reference);
 			
-			new IndexedColourMap().GenerateExample(path,ModelView.IFC4DesignTransfer);
-			new BeamUnitTestsVaryingProfile().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new BeamUnitTestsVaryingPath().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new BeamUnitTestsVaryingCardinal().GenerateExample(path, ModelView.IFC4DesignTransfer);
+			new IndexedColourMap().GenerateExample(path,ModelView.Ifc4DesignTransfer);
+			new BeamUnitTestsVaryingProfile().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new BeamUnitTestsVaryingPath().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new BeamUnitTestsVaryingCardinal().GenerateExample(path, ModelView.Ifc4DesignTransfer);
 			//todo tapered
-			new Slab().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new SlabOpenings().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new Wall().GenerateExample(path, ModelView.IFC4DesignTransfer);
+			new Slab().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new SlabOpenings().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new Wall().GenerateExample(path, ModelView.Ifc4DesignTransfer);
 			//todo wall with Openings
-			new Bath().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new BasinAdvancedBrep().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new BasinBrep().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new BasinTessellation().GenerateExample(path, ModelView.IFC4Reference);
-			new ReinforcingBar().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new ReinforcingAssembly().GenerateExample(path, ModelView.IFC4DesignTransfer);
-			new Column().GenerateExample(path, ModelView.IFC4DesignTransfer);
+			new Bath().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new BasinAdvancedBrep().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new BasinBrep().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new BasinTessellation().GenerateExample(path, ModelView.Ifc4Reference);
+			new ReinforcingBar().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new ReinforcingAssembly().GenerateExample(path, ModelView.Ifc4DesignTransfer);
+			new Column().GenerateExample(path, ModelView.Ifc4DesignTransfer);
 
 			//Possible Examples to add
 			// IfcBuildingStorey with datums and local placements relative to building

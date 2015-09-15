@@ -51,33 +51,36 @@ namespace IFC.Examples
 			IfcSweptDiskSolid sweptDiskSolid = new IfcSweptDiskSolid(directrix, barDiameter/2.0, 0);
 			IfcRepresentationMap representationMap = new IfcRepresentationMap(sweptDiskSolid);
 			string shapeCode = ""; //Todo
-			IfcReinforcingBarType reinforcingBarType = new IfcReinforcingBarType(md, new IfcElemTypeParams("0jMRtfHYXE7u4s_CQ2uVE9", "12 Diameter Ligature", "", "", ""), material, representationMap, null, IfcReinforcingBarTypeEnum.LIGATURE, barDiameter, area, 1150, IfcReinforcingBarSurfaceEnum.TEXTURED, shapeCode, null);
+			IfcReinforcingBarType reinforcingBarType = new IfcReinforcingBarType(md, "12 Diameter Ligature", IfcReinforcingBarTypeEnum.LIGATURE, barDiameter, area, 1150, IfcReinforcingBarSurfaceEnum.TEXTURED, shapeCode, null) { GlobalId = "0jMRtfHYXE7u4s_CQ2uVE9", MaterialSelect = material, RepresentationMaps = new List<IfcRepresentationMap>() { representationMap} };
 			reinforcingBarType.ObjectTypeOf.GlobalId = "1iAfl2ERbFmwi7uniy1H7j";
 			reinforcingBarType.Material.Associates.GlobalId = "3gfVO40P5EfQyKZ_bF0R$6";
 			if (assembly)
 			{
 				IfcMaterial concrete = new IfcMaterial(md,"Concrete","","Concrete");
 				string name = "400x200RC";
-				IfcRectangleProfileDef rectangleProfileDef = new IfcRectangleProfileDef(md, IfcProfileTypeEnum.AREA, name, null, 400, 200);
+				IfcRectangleProfileDef rectangleProfileDef = new IfcRectangleProfileDef(md, name, 400, 200);
 				IfcMaterialProfile materialProfile = new IfcMaterialProfile(md,name,"",concrete,rectangleProfileDef,0,"");
 
-				IfcBeamType beamType = new IfcBeamType(md, new IfcElemTypeParams("3bdpqVuWTCbxJ2S3ODYv6q", name, "", "", ""), materialProfile, null, IfcBeamTypeEnum.BEAM);
+				IfcBeamType beamType = new IfcBeamType(name, materialProfile, IfcBeamTypeEnum.BEAM) { GlobalId = "3bdpqVuWTCbxJ2S3ODYv6q"};
 				beamType.ObjectTypeOf.GlobalId = "2oaQVVf79BrwRouvtRuQVg";
 				beamType.Material.Associates.GlobalId = "2ZEgyI2v184hwa$_diRqS9";
-				IfcBeamStandardCase beamStandardCase = new IfcBeamStandardCase(building,new IfcElemParams("1yjQ2DwLnCC8k3i3X6D_ut","","","",""), beamType, new Line(0, 0, 0, 0, 5000, 0), Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, null);
+				IfcBeamStandardCase beamStandardCase = new IfcBeamStandardCase(building, beamType, new Line(0, 0, 0, 0, 5000, 0), Vector3d.ZAxis, IfcCardinalPointReference.TOPMID, null) { GlobalId = "1yjQ2DwLnCC8k3i3X6D_ut" };
 				beamStandardCase.Material.Associates.GlobalId = "3DWeleqqjEG9KshbOZXUdY";
-				IfcElementAssembly elementAssembly = new IfcElementAssembly(beamStandardCase, new IfcElemParams("0Q1tCJWdj4kOkZUg7rkf2h","","","",""), IfcAssemblyPlaceEnum.FACTORY, IfcElementAssemblyTypeEnum.REINFORCEMENT_UNIT);
+				IfcElementAssembly elementAssembly = new IfcElementAssembly(beamStandardCase, IfcAssemblyPlaceEnum.FACTORY, IfcElementAssemblyTypeEnum.REINFORCEMENT_UNIT) { GlobalId = "0Q1tCJWdj4kOkZUg7rkf2h" };
 				List<string> ids = new List<string>() { "0ohBfsArr3ruXYxacT4yl5","3YrK7RbE122fNRsP5djFAe","0wxAc63nj5AezFhfks7wLL","0bsov2wZL6tRRZmKy4vuUU","3qrgfIBb92ZegJTle7jou3","16m6R3JeT83fJPCze2yU$a","2SGIIYjSbCuu3HVwoLt1yh","0PsLby6eL8_hVEt4QwK0lZ","1325VJou5AngWp1djcV0hL","20zj_$BcH74xRgR4bDrLNb","3M4SfEMtHEJukgZR4hw$eV","23BYnIaOLBZPVTrKVEDJiy","2XulRByDL8ugyo4Uqv9rJr","2xvQMSga96XOT3VeCS6ZsK","2gUE6_w3j77f8YJGz_2RMl","0J0dRL4tT93REAabfASDom","048RJ151b81PqODsTMD4EA","3hXx9Kb6b5bvjgr9pwvpz0","0FmUHg8ZX0ZfY$0f5nkM2l","2_zvpwRdvAuRiTlHXX$Qp8","1mhkXHKfX6PxdS2vZn17wX","0CeIQzUqP5qOOeAjMtH2OX","3shtoAQL5BAhvwA_1Ph$lC","22j4RNKqD2IBRDGig5eaCF","3Wvu6qGJH4ChhTV3pl9CGh","37Qrf07Iz3tRMbSxEA4ynH","2gelqZ1Wv8BvCy6TstVGkd","1Q21dHc_X7eRppCHrT69Vb","0e6Wc08NLD59ueqCAK1gxp","3xdMOSZMj3cBOV_QTbXZha","1r_U9JTkHDWwkv_nfWFHVe","29I7_S2fT3WRD4zPH4YjmD","0$ciATTaP17PJMHQD0$N3Y","1irBeCCUf82wdGg7qTPCbW" };
 				int jcounter = 0;
 				for (int icounter = 25; icounter < 5000; icounter += 150)
 				{
-					IfcElemParams ep = new IfcElemParams(ids[jcounter++], "", "", "", "");
-					reinforcingBarType.GenerateMappedItemElement(elementAssembly, new Plane(new Point3d(0,icounter,0),Vector3d.XAxis,Vector3d.YAxis), ep);
+					IfcElement element = reinforcingBarType.GenerateMappedItemElement(elementAssembly, new Plane(new Point3d(0, icounter, 0), Vector3d.XAxis, Vector3d.YAxis));
+					element.GlobalId = ids[jcounter++];
 				}
 				elementAssembly.IsDecomposedBy[0].GlobalId = "1WdB196Kb72f_pKgj5rklU";
 			}
 			else
-				reinforcingBarType.GenerateMappedItemElement(building, Plane.WorldXY, new IfcElemParams("0WUveBtSTDbunNjDLsuRn$","","","",""));
+			{ 
+				IfcElement element = reinforcingBarType.GenerateMappedItemElement(building, Plane.WorldXY);
+				element.GlobalId = "0WUveBtSTDbunNjDLsuRn$";
+			}
 		}
 	}
 	

@@ -22,7 +22,7 @@ namespace IFC.Examples
 			IfcIndexedColourMap indexedColourMap = new IfcIndexedColourMap(md, triangulatedFaceSet, colourRgbList, new List<int>() { 1, 1, 2, 2, 3, 3, 1, 1, 1, 1, 1,1 });
 
 			md.NextObjectRecord = 300;
-			IfcBuildingElementProxy buildingElementProxy = new IfcBuildingElementProxy(building, new IfcElemParams("25c34fWeL1NQux73WfnXox","","","",""), triangulatedFaceSet,null);
+			IfcBuildingElementProxy buildingElementProxy = new IfcBuildingElementProxy(building, triangulatedFaceSet) { GlobalId = "25c34fWeL1NQux73WfnXox" };
 			
 		}
 	}
