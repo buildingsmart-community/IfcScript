@@ -9,9 +9,9 @@ namespace IFC.Examples
 {
 	internal class Column : IFCExampleBase 
 	{
-		protected override void GenerateData(STPModelData md, IfcBuilding building)
+		protected override void GenerateData(DatabaseIfc database, IfcBuilding building)
 		{
-			IfcMaterialProfile materialProfile = GetParametericIPE200Profile(md);
+			IfcMaterialProfile materialProfile = GetParametericIPE200Profile(database);
 			IfcColumnType columnType = new IfcColumnType(materialProfile.Name,  materialProfile, IfcColumnTypeEnum.COLUMN) { GlobalId = "3qJDCKcPj1tgEHrIL1MUed" };
 			columnType.ObjectTypeOf.GlobalId = "0QSJIMj99DcOpmktgECZT7";
 			columnType.Material.Associates.GlobalId = "2RR6JzjWrDuRIDIKRwxCJZ";

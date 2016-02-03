@@ -10,17 +10,17 @@ namespace IFC.Examples
 {
 	class Wall : IFCExampleBase
 	{
-		protected override void GenerateData(STPModelData md, IfcBuilding building)
+		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
 		{
-			IfcMaterial masonryFinish = new IfcMaterial(md, "Masonry - Brick - Brown", "", "");
-			IfcMaterial masonry = new IfcMaterial(md, "Masonry", "", "");
-			IfcMaterialLayer layerFinish = new IfcMaterialLayer(md, masonryFinish, 110, false, "Finish", "", "", 0);
-			IfcMaterialLayer airInfiltrationBarrier = new IfcMaterialLayer(md, null, 50, true, "Air Infiltration Barrier", "", "", 0);
-			IfcMaterialLayer structure = new IfcMaterialLayer(md, masonry, 110, false, "Core", "", "", 0);
+			IfcMaterial masonryFinish = new IfcMaterial(db, "Masonry - Brick - Brown");
+			IfcMaterial masonry = new IfcMaterial(db, "Masonry");
+			IfcMaterialLayer layerFinish = new IfcMaterialLayer(masonryFinish, 110, "Finish");
+			IfcMaterialLayer airInfiltrationBarrier = new IfcMaterialLayer(db, 50, "Air Infiltration Barrier") { IsVentilated = IfcLogicalEnum.TRUE };
+			IfcMaterialLayer structure = new IfcMaterialLayer(masonry, 110, "Core");
 			string name = "Double Brick - 270";
-			IfcMaterialLayerSet materialLayerSet = new IfcMaterialLayerSet( new List<IfcMaterialLayer>() { layerFinish, airInfiltrationBarrier, structure }, name, "");
+			IfcMaterialLayerSet materialLayerSet = new IfcMaterialLayerSet( new List<IfcMaterialLayer>() { layerFinish, airInfiltrationBarrier, structure }, name);
 			materialLayerSet.Associates.GlobalId = "36U74BIPDD89cYkx9bkV$Y";
-			md.NextObjectRecord = 300;
+			db.NextObjectRecord = 300;
 			IfcWallType wallType = new IfcWallType(name, materialLayerSet, IfcWallTypeEnum.NOTDEFINED) { GlobalId = "2aG1gZj7PD2PztLOx2$IVX" };
 			wallType.ObjectTypeOf.GlobalId = "1$EkFElNT8TB_VUVG1FtMe";
 			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, wallType, new Line(0, 0, 0, 5000, 0, 0), 2000, 0, true, null) { GlobalId = "0DWgwt6o1FOx7466fPk$jl" };

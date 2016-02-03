@@ -81,8 +81,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GeomGymIFC">
-      <HintPath>..\Dependencies\GeomGymIFC.dll</HintPath>
+    <Reference Include="GeomGymIFCx64">
+      <HintPath>..\Dependencies\GeomGymIFCx64.dll</HintPath>
     </Reference>
     <Reference Include="Rhino3dmIO">
       <HintPath>..\Dependencies\Rhino3dmIO.dll</HintPath>
