@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-using GGYM.IFC;
+using GeometryGym.Ifc;
 using Rhino.Geometry;
 
 namespace IFC.Examples
@@ -19,10 +19,11 @@ namespace IFC.Examples
 			IfcCsgSolid csgSolid = new IfcCsgSolid(booleanResult);
 			IfcRepresentationMap representationMap = new IfcRepresentationMap(csgSolid);
 			IfcMaterial ceramic = new IfcMaterial(db, "Ceramic");
-			ceramic.Associates.GlobalId = "0Pkhszwjv1qRMYyCFg9fjB";
 			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(db, "Bath", IfcSanitaryTerminalTypeEnum.BATH) { GlobalId = "1HarmwaPv3OeJSXpaoPKpg", MaterialSelect = ceramic, RepresentationMaps = new List<IfcRepresentationMap>() {representationMap } };
-			sanitaryTerminalType.ObjectTypeOf.GlobalId = "1lO$X3e3j9lfVMhNy4MzKB";
 			IfcElement element = sanitaryTerminalType.GenerateMappedItemElement(building, Plane.WorldXY);
+
+			ceramic.Associates.GlobalId = "0Pkhszwjv1qRMYyCFg9fjB";
+			sanitaryTerminalType.ObjectTypeOf.GlobalId = "1lO$X3e3j9lfVMhNy4MzKB";
 			element.GlobalId = "3$$o7C03j0KQeLnoj018fc";
 		}
 	}

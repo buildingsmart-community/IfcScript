@@ -4,7 +4,7 @@ using System.Linq;
 using System.IO;
 
 using System.Text;
-using GGYM.IFC;
+using GeometryGym.Ifc;
 
 namespace IFC
 {

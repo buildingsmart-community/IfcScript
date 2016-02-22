@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-using GGYM.IFC;
+using GeometryGym.Ifc;
 using Rhino.Geometry;
 
 using CoordIndex = System.Tuple<int, int, int>; 
@@ -19,7 +19,7 @@ namespace IFC.Examples
 			List<CoordIndex> coordIndex = new List<CoordIndex>() { new CoordIndex(1, 6, 5), new CoordIndex(1, 2, 6), new CoordIndex(6, 2, 7), new CoordIndex(7, 2, 3), new CoordIndex(7, 8, 6), new CoordIndex(6, 8, 5), new CoordIndex(5, 8, 1), new CoordIndex(1, 8, 4), new CoordIndex(4, 2, 1), new CoordIndex(2, 4, 3), new CoordIndex(4, 8, 7), new CoordIndex(7, 3, 4) };
 			IfcTriangulatedFaceSet triangulatedFaceSet = new IfcTriangulatedFaceSet(db, cartesianPointList3D, null, true, coordIndex, null);
 			IfcColourRgbList colourRgbList = new IfcColourRgbList(db, new List<Color>() { Color.Red, Color.Green, Color.Yellow });
-			IfcIndexedColourMap indexedColourMap = new IfcIndexedColourMap(db, triangulatedFaceSet, colourRgbList, new List<int>() { 1, 1, 2, 2, 3, 3, 1, 1, 1, 1, 1,1 });
+			IfcIndexedColourMap indexedColourMap = new IfcIndexedColourMap(triangulatedFaceSet, colourRgbList, new List<int>() { 1, 1, 2, 2, 3, 3, 1, 1, 1, 1, 1,1 });
 
 			db.NextObjectRecord = 300;
 			IfcBuildingElementProxy buildingElementProxy = new IfcBuildingElementProxy(building,null,new IfcProductDefinitionShape(new IfcShapeRepresentation( triangulatedFaceSet))) { GlobalId = "25c34fWeL1NQux73WfnXox" };

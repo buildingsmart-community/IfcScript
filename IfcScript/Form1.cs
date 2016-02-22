@@ -9,7 +9,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using IFC.Examples;
-using GGYM.IFC;
+using GeometryGym.Ifc;
 
 namespace IFCExamples
 {

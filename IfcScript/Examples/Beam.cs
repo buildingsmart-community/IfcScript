@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GGYM.IFC;
+using GeometryGym.Ifc;
 using Rhino.Geometry;
 
 using CoordIndex = System.Tuple<int, int, int>;

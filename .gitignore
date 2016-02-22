@@ -189,6 +189,6 @@ FakesAssemblies/
 *.rui_bak
 
 # IFC
-!GeomGymIFC.dll
+!GeomGymIFCx64.dll
 !Rhino3dmIO.dll
 !rhino3dmio_native.dll
