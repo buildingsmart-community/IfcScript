@@ -24,8 +24,6 @@ namespace IFCExamples
 		{
 			DirectoryInfo di = Directory.GetParent(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 			di = Directory.GetParent(di.FullName);
-			di = Directory.GetParent(di.FullName);
-			di = Directory.GetParent(di.FullName);
 
 			string path = Path.Combine(di.FullName, "examples");
 			if (!Directory.Exists(path))

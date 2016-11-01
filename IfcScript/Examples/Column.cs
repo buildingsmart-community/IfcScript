@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GeometryGym.Ifc;
-using Rhino.Geometry;
 
 namespace IFC.Examples
 {
@@ -12,12 +11,17 @@ namespace IFC.Examples
 		protected override void GenerateData(DatabaseIfc database, IfcBuilding building)
 		{
 			IfcMaterialProfile materialProfile = GetParametericIPE200Profile(database);
-			IfcColumnType columnType = new IfcColumnType(materialProfile.Name,  materialProfile, IfcColumnTypeEnum.COLUMN) { GlobalId = "3qJDCKcPj1tgEHrIL1MUed" };
-			IfcColumnStandardCase column = new IfcColumnStandardCase(building, columnType, new Line(0, 0, 0, 0, 0, 2000), Vector3d.XAxis, IfcCardinalPointReference.MID, null) { GlobalId = "3S1GK_wA565RDoiWQEJc_l", Name= materialProfile.Name };
+			IfcColumnType columnType = new IfcColumnType(materialProfile.Name,  materialProfile, IfcColumnTypeEnum.COLUMN);
+			IfcMaterialProfileSet materialProfileSet = columnType.MaterialSelect as IfcMaterialProfileSet;
+			IfcColumnStandardCase column = new IfcColumnStandardCase(building, new IfcMaterialProfileSetUsage( materialProfileSet,IfcCardinalPointReference.MID), new IfcAxis2Placement3D(new IfcCartesianPoint(database,0,0,0)), 2000) { Name= materialProfile.Name, RelatingType = columnType };
+			database.Context.AddDeclared(columnType);
 
+			//Unique ids assigned to generate constant IfcScript  sample files, remove otherwise
+			columnType.GlobalId = "3qJDCKcPj1tgEHrIL1MUed";
+			column.GlobalId = "3S1GK_wA565RDoiWQEJc_l";
 			columnType.ObjectTypeOf.GlobalId = "0QSJIMj99DcOpmktgECZT7";
-			columnType.Material.Associates.GlobalId = "2RR6JzjWrDuRIDIKRwxCJZ";
-			column.Material.Associates.GlobalId = "2JRmkBe255UBkcHeZrq_Bl";
+			columnType.MaterialSelect.Associates.GlobalId = "2RR6JzjWrDuRIDIKRwxCJZ";
+			column.MaterialSelect.Associates.GlobalId = "2JRmkBe255UBkcHeZrq_Bl";
 		}
 	}
 }

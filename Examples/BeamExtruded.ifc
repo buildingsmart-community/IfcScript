@@ -2,48 +2,53 @@ ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(('ViewDefinition [ReferenceView_V1]'),'2;1');
 FILE_NAME(
-/* name */ '',
-/* time_stamp */ '2016-02-04T08:11:04',
-/* author */ ('Jon'),
-/* organization */ ('Unknown'),
-/* preprocessor_version */ 'GeomGymIFC by Geometry Gym Pty Ltd',
-/* originating_system */ 'Unknown Application',
+/* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\BeamExtruded.ifc',
+/* time_stamp */ '2016-10-29T15:35:34',
+/* author */ ('jonm'),
+/* organization */ ('Geometry Gym'),
+/* preprocessor_version */ 'GeometryGymIFC v0.0.10.0 by Geometry Gym Pty Ltd built 2016-10-28T12:40:35',
+/* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
 FILE_SCHEMA (('IFC4'));
 ENDSEC;
 
 DATA;
-/* general entities required for all IFC data sets, defining the context for the exchange */
-#1= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.0001,#3,$);
-#2= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#3= IFCAXIS2PLACEMENT3D(#2,$,$);
-#4= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
-#5= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#1,$,.MODEL_VIEW.,$);
+#10= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#11= IFCAXIS2PLACEMENT3D(#10,$,$);
+#12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
-#50= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,$,$,$,$,$,$,$);
-#51= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#211),#50);
-#52= IFCAXIS2PLACEMENT3D(#2,$,$);
-#100= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#1),#101);
-#101= IFCUNITASSIGNMENT((#102,#103,#104));
-#102= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
-#103= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
-#104= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
-#105= IFCRELAGGREGATES('091a6ewbvCMQ2Vyiqspa7a',$,'Project Container','Project Container for Buildings',#100,(#50));
-#200= IFCCARTESIANPOINTLIST2D(((2.8,-79.5),(2.8,79.5),(6.31471899999999,87.985281),(14.8,91.5),(50.0,91.5),(50.0,100.0),(-50.0,100.0),(-50.0,91.5),(-14.8,91.5),(-6.31471899999997,87.985281),(-2.79999999999999,79.5),(-2.8,-79.5),(-6.31471899999999,-87.985281),(-14.8,-91.5),(-50.0,-91.5),(-50.0,-100.0),(50.0,-100.0),(50.0,-91.5),(14.8,-91.5),(6.31471899999997,-87.985281)));
-#201= IFCINDEXEDPOLYCURVE(#200,(IFCLINEINDEX((1,2)),IFCARCINDEX((2,3,4)),IFCLINEINDEX((4,5,6,7,8,9)),IFCARCINDEX((9,10,11)),IFCLINEINDEX((11,12)),IFCARCINDEX((12,13,14)),IFCLINEINDEX((14,15,16,17,18,19)),IFCARCINDEX((19,20,1))),.F.);
-#202= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,'IPE200',#201);
-#203= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#204= IFCDIRECTION((0.0,1.0,0.0));
-#205= IFCDIRECTION((1.0,0.0,0.0));
-#206= IFCAXIS2PLACEMENT3D(#203,#204,#205);
-#207= IFCDIRECTION((0.0,0.0,1.0));
-#208= IFCEXTRUDEDAREASOLID(#202,#206,#207,1000.0);
-#209= IFCSHAPEREPRESENTATION(#5,'Body','SweptSolid',(#208));
-#210= IFCPRODUCTDEFINITIONSHAPE($,$,(#209));
-#211= IFCBEAM('0EF5_zZRv0pQPddeofU3KT',$,'ExampleBeamName','ExampleBeamDescription',$,#213,#210,'Tag',$);
-#212= IFCAXIS2PLACEMENT3D(#2,$,$);
-#213= IFCLOCALPLACEMENT($,#212);
+#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
+#14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#61),#13);
+#16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
+/* general entities required for all IFC data sets, defining the context for the exchange */
+#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
+#21= IFCUNITASSIGNMENT((#22,#23,#24,#25,#26));
+#22= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
+#23= IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
+#24= IFCSIUNIT(*,.VOLUMEUNIT.,$,.CUBIC_METRE.);
+#25= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
+#26= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
+#27= IFCRELAGGREGATES('091a6ewbvCMQ2Vyiqspa7a',$,'Project Container','Project Container for Buildings',#20,(#13));
+#28= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.0001,#30,#31);
+#29= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#30= IFCAXIS2PLACEMENT3D(#29,$,$);
+#31= IFCDIRECTION((0.0,1.0));
+#32= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+/* Example data for BeamExtruded */
+#50= IFCCARTESIANPOINTLIST2D(((2.8,-79.5),(2.8,79.5),(6.31472,87.98528),(14.8,91.5),(50.0,91.5),(50.0,100.0),(-50.0,100.0),(-50.0,91.5),(-14.8,91.5),(-6.31472,87.98528),(-2.8,79.5),(-2.8,-79.5),(-6.31472,-87.98528),(-14.8,-91.5),(-50.0,-91.5),(-50.0,-100.0),(50.0,-100.0),(50.0,-91.5),(14.8,-91.5),(6.31472,-87.98528)));
+#51= IFCINDEXEDPOLYCURVE(#50,(IFCLINEINDEX((1,2)),IFCARCINDEX((2,3,4)),IFCLINEINDEX((4,5)),IFCLINEINDEX((5,6)),IFCLINEINDEX((6,7)),IFCLINEINDEX((7,8)),IFCLINEINDEX((8,9)),IFCARCINDEX((9,10,11)),IFCLINEINDEX((11,12)),IFCARCINDEX((12,13,14)),IFCLINEINDEX((14,15)),IFCLINEINDEX((15,16)),IFCLINEINDEX((16,17)),IFCLINEINDEX((17,18)),IFCLINEINDEX((18,19)),IFCARCINDEX((19,20,1))),$);
+#52= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,'IPE200',#51);
+#53= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#54= IFCDIRECTION((0.0,1.0,0.0));
+#55= IFCDIRECTION((1.0,0.0,0.0));
+#56= IFCAXIS2PLACEMENT3D(#53,#54,#55);
+#57= IFCDIRECTION((0.0,0.0,1.0));
+#58= IFCEXTRUDEDAREASOLID(#52,#56,#57,1000.0);
+#59= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#58));
+#60= IFCPRODUCTDEFINITIONSHAPE($,$,(#59));
+#61= IFCBEAM('0EF5_zZRv0pQPddeofU3KT',$,'ExampleBeamName','ExampleBeamDescription',$,#62,#60,'Tag',$);
+#62= IFCLOCALPLACEMENT(#12,#11);
 ENDSEC;
 
 END-ISO-10303-21;
