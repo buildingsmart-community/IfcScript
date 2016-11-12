@@ -38,24 +38,16 @@ namespace IFC.Examples
 			db.NextObjectRecord = 300;
 			IfcSlabType slabType = new IfcSlabType(name, materialLayerSet, IfcSlabTypeEnum.FLOOR);
 			db.Context.AddDeclared(slabType);
-			IfcBoundedCurve boundedCurve = null;
 			List<Coord2d> points = new List<Coord2d>() { new Coord2d(0,0), new Coord2d(1000,0), new Coord2d(1400,2000), new Coord2d(1000,4000),new Coord2d(0,4000), new Coord2d(-400,2000) };
-			if (db.Release == ReleaseVersion.IFC2x3)
-			{
-				points.Add(points[0]);
-				boundedCurve = new IfcPolyline(db, points);
-			}
-			else
-			{
-				List<IfcSegmentIndexSelect> segments = new List<IfcSegmentIndexSelect>();
-				segments.Add(new IfcLineIndex(1, 2));
-				segments.Add(new IfcArcIndex(2, 3, 4));
-				segments.Add(new IfcLineIndex(4, 5));
-				segments.Add(new IfcArcIndex(5, 6, 1));
-				boundedCurve = new IfcIndexedPolyCurve(new IfcCartesianPointList2D(db, points), segments);
-			}
-			IfcExtrudedAreaSolid extrudedAreaSolid = new IfcExtrudedAreaSolid(new IfcArbitraryClosedProfileDef("", boundedCurve), new IfcAxis2Placement3D(new IfcCartesianPoint(db,0, 0, -thickness)), db.Factory.ZAxis, thickness);
-			IfcSlab slabStandardCase = new IfcSlab(building, null, new IfcProductDefinitionShape(new IfcShapeRepresentation(extrudedAreaSolid))) {  RelatingType = slabType };
+			
+			List<IfcSegmentIndexSelect> segments = new List<IfcSegmentIndexSelect>();
+			segments.Add(new IfcLineIndex(1, 2));
+			segments.Add(new IfcArcIndex(2, 3, 4));
+			segments.Add(new IfcLineIndex(4, 5));
+			segments.Add(new IfcArcIndex(5, 6, 1));
+			IfcBoundedCurve	boundedCurve = IfcBoundedCurve.Generate(db, points, segments);
+			IfcMaterialLayerSetUsage layerSetUsage = new IfcMaterialLayerSetUsage(materialLayerSet, IfcLayerSetDirectionEnum.AXIS3, IfcDirectionSenseEnum.NEGATIVE, 0);
+			IfcSlab slabStandardCase = new IfcSlabStandardCase(building, layerSetUsage,new IfcAxis2Placement3D(new IfcCartesianPoint(db,0,0,0)),new IfcArbitraryClosedProfileDef("Slab Perimeter",boundedCurve)) {  RelatingType = slabType };
 			slabStandardCase.RelatingType = slabType;
 			if (openings)
 			{

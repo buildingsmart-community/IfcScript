@@ -20,7 +20,8 @@ namespace IFC.Examples
 			IfcMaterialLayerSet materialLayerSet = new IfcMaterialLayerSet( new List<IfcMaterialLayer>() { layerFinish, airInfiltrationBarrier, structure }, name);
 			db.NextObjectRecord = 300;
 			IfcWallType wallType = new IfcWallType(name, materialLayerSet, IfcWallTypeEnum.NOTDEFINED);
-			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, materialLayerSet,new IfcAxis2Placement3D(new IfcCartesianPoint(db,0,0,0)),5000, 2000, 0, true);
+			IfcMaterialLayerSetUsage layerSetUsage = new IfcMaterialLayerSetUsage(materialLayerSet, IfcLayerSetDirectionEnum.AXIS2, IfcDirectionSenseEnum.POSITIVE, -materialLayerSet.MaterialLayers.Sum(x => x.LayerThickness) / 2.0);
+			IfcWallStandardCase wallStandardCase = new IfcWallStandardCase(building, layerSetUsage, new IfcAxis2Placement3D(new IfcCartesianPoint(db,0,0,0)),5000, 2000);
 			db.Context.AddDeclared(wallType);
 
 			//Unique ids assigned to generate constant IfcScript  sample files, remove otherwise

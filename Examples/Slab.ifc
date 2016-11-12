@@ -3,10 +3,10 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\Slab.ifc',
-/* time_stamp */ '2016-10-29T15:35:34',
+/* time_stamp */ '2016-11-07T20:44:07',
 /* author */ ('jonm'),
 /* organization */ ('Geometry Gym'),
-/* preprocessor_version */ 'GeometryGymIFC v0.0.10.0 by Geometry Gym Pty Ltd built 2016-10-28T12:40:35',
+/* preprocessor_version */ 'GeometryGymIFC v0.0.11.0 by Geometry Gym Pty Ltd built 2016-11-07T09:35:37',
 /* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
@@ -19,7 +19,7 @@ DATA;
 #12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
 #13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
-#14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#312),#13);
+#14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#311),#13);
 #16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
 /* general entities required for all IFC data sets, defining the context for the exchange */
 #20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
@@ -39,21 +39,23 @@ DATA;
 #50= IFCMATERIAL('Concrete','Concrete',$);
 #52= IFCMATERIALLAYER(#50,200.0,.F.,'Core',$,$,$);
 #54= IFCMATERIALLAYERSET((#52),'200mm Concrete',$);
-#55= IFCRELASSOCIATESMATERIAL('3ESAzibgr9BvK9M75iV84w',$,'MatAssoc','Material Associates',(#300),#54);
+#55= IFCRELASSOCIATESMATERIAL('2l_enLhI93reVwnim9gXUq',$,'MatAssoc','Material Associates',(#300),#54);
 #300= IFCSLABTYPE('0RSW$KKbzCZ9QaSm3GoEan',$,'200mm Concrete',$,$,$,$,$,$,.FLOOR.);
-#301= IFCRELDEFINESBYTYPE('3wwDcmW5T3HfafURQewdD0',$,'NameNotAssigned',$,(#312),#300);
+#301= IFCRELDEFINESBYTYPE('3wwDcmW5T3HfafURQewdD0',$,'NameNotAssigned',$,(#311),#300);
 #302= IFCRELDECLARES('1Cjr05W9T0fx0M3_mdVqMd',$,$,$,#20,(#300));
 #303= IFCCARTESIANPOINTLIST2D(((0.0,0.0),(1000.0,0.0),(1400.0,2000.0),(1000.0,4000.0),(0.0,4000.0),(-400.0,2000.0)));
 #304= IFCINDEXEDPOLYCURVE(#303,(IFCLINEINDEX((1,2)),IFCARCINDEX((2,3,4)),IFCLINEINDEX((4,5)),IFCARCINDEX((5,6,1))),$);
-#305= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,$,#304);
-#306= IFCCARTESIANPOINT((0.0,0.0,-200.0));
-#307= IFCAXIS2PLACEMENT3D(#306,$,$);
-#308= IFCDIRECTION((0.0,0.0,1.0));
-#309= IFCEXTRUDEDAREASOLID(#305,#307,#308,200.0);
-#310= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#309));
-#311= IFCPRODUCTDEFINITIONSHAPE($,$,(#310));
-#312= IFCSLAB('1wAj$J2Az2V8wnBiVYd3bU',$,$,$,$,#313,#311,$,$);
-#313= IFCLOCALPLACEMENT(#12,#11);
+#305= IFCMATERIALLAYERSETUSAGE(#54,.AXIS3.,.NEGATIVE.,0.0,$);
+#306= IFCRELASSOCIATESMATERIAL('3ESAzibgr9BvK9M75iV84w',$,'MatAssoc','Material Associates',(#311),#305);
+#307= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#308= IFCAXIS2PLACEMENT3D(#307,$,$);
+#309= IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,'Slab Perimeter',#304);
+#310= IFCLOCALPLACEMENT(#12,#308);
+#311= IFCSLABSTANDARDCASE('1wAj$J2Az2V8wnBiVYd3bU',$,$,$,$,#310,#315,$,$);
+#312= IFCDIRECTION((0.0,0.0,-1.0));
+#313= IFCEXTRUDEDAREASOLID(#309,$,#312,200.0);
+#314= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#313));
+#315= IFCPRODUCTDEFINITIONSHAPE($,$,(#314));
 ENDSEC;
 
 END-ISO-10303-21;
