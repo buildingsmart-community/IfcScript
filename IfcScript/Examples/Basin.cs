@@ -10,33 +10,34 @@ using CoordIndex = System.Tuple<int, int, int>;
 
 namespace IFC.Examples
 {
-	class BasinAdvancedBrep : IFCExampleBase
+	class BasinAdvancedBrep : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			Basin.GenerateBasin(Basin.ShapeRep.AdvancedBrep, db, building);
+			Basin.GenerateBasin(Basin.ShapeRep.AdvancedBrep, building);
 		}
 	}
-	class BasinBrep : IFCExampleBase
+	class BasinBrep : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			Basin.GenerateBasin(Basin.ShapeRep.Brep, db, building);
+			Basin.GenerateBasin(Basin.ShapeRep.Brep, building);
 		}
 	}
 
-	class BasinTessellation : IFCExampleBase
+	class BasinTessellation : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			Basin.GenerateBasin(Basin.ShapeRep.Tessellation, db, building);
+			Basin.GenerateBasin(Basin.ShapeRep.Tessellation, building);
 		}
 	}
 	internal class Basin
 	{
 		internal enum ShapeRep { AdvancedBrep, Brep, Tessellation } //,CSG, ClosedShell
-		internal static void GenerateBasin(ShapeRep shapeRep, DatabaseIfc db, IfcBuilding building)
+		internal static void GenerateBasin(ShapeRep shapeRep, IfcBuilding building)
 		{
+			DatabaseIfc db = building.Database;
 			IfcRepresentationMap representationMap = null;
 			if (shapeRep == ShapeRep.AdvancedBrep)
 			{
@@ -341,7 +342,8 @@ namespace IFC.Examples
 			}
 
 			IfcMaterial ceramic = new IfcMaterial(db, "Ceramic");
-			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(db, "Wash Hand Basin", IfcSanitaryTerminalTypeEnum.WASHHANDBASIN) { MaterialSelect = ceramic, RepresentationMaps = new List<IfcRepresentationMap>() { representationMap } };
+			IfcSanitaryTerminalType sanitaryTerminalType = new IfcSanitaryTerminalType(db, "Wash Hand Basin", IfcSanitaryTerminalTypeEnum.WASHHANDBASIN) { MaterialSelect = ceramic };
+			sanitaryTerminalType.AddRepresentationMap(representationMap);
 			db.Context.AddDeclared(sanitaryTerminalType);
 			IfcElement element = sanitaryTerminalType.GenerateMappedItemElement(building, new IfcCartesianTransformationOperator3D(db));
 

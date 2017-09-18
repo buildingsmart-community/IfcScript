@@ -7,24 +7,25 @@ using GeometryGym.Ifc;
  
 namespace IFC.Examples
 {
-	internal class ReinforcingAssembly : IFCExampleBase
+	internal class ReinforcingAssembly : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			ReinforcingExample.GenerateData(db, building, true);
+			ReinforcingExample.GenerateInstance(building, true);
 		}
 	}
-	internal class ReinforcingBar : IFCExampleBase
+	internal class ReinforcingBar : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			ReinforcingExample.GenerateData(db, building, false);
+			ReinforcingExample.GenerateInstance( building, false);
 		}
 	}
 	internal class ReinforcingExample
 	{
-		internal static void GenerateData(DatabaseIfc db, IfcBuilding building, bool assembly)
+		internal static void GenerateInstance(IfcBuilding building, bool assembly)
 		{
+			DatabaseIfc db = building.Database;
 			IfcDocumentReference documentReference = new IfcDocumentReference(db) {Name = "MyReinforcementCode", Identification = "MyCodeISO3766" };
 			IfcRelAssociatesDocument associatesDocument = new IfcRelAssociatesDocument(db.Project, documentReference) { GlobalId = "1R7R97$uLAAv4wci$KGwn8" }; 
 			IfcMaterial material = new IfcMaterial(db, "ReinforcingSteel");
@@ -54,7 +55,8 @@ namespace IFC.Examples
 			IfcSweptDiskSolid sweptDiskSolid = new IfcSweptDiskSolid(directrix, barDiameter/2.0);
 			IfcRepresentationMap representationMap = new IfcRepresentationMap(sweptDiskSolid);
 			string shapeCode = ""; //Todo
-			IfcReinforcingBarType reinforcingBarType = new IfcReinforcingBarType(db, "12 Diameter Ligature", IfcReinforcingBarTypeEnum.LIGATURE, barDiameter, area, 1150, IfcReinforcingBarSurfaceEnum.TEXTURED, shapeCode, null) { GlobalId = "0jMRtfHYXE7u4s_CQ2uVE9", MaterialSelect = material, RepresentationMaps = new List<IfcRepresentationMap>() { representationMap} };
+			IfcReinforcingBarType reinforcingBarType = new IfcReinforcingBarType(db, "12 Diameter Ligature", IfcReinforcingBarTypeEnum.LIGATURE, barDiameter, area, 1150, IfcReinforcingBarSurfaceEnum.TEXTURED, shapeCode, null) { GlobalId = "0jMRtfHYXE7u4s_CQ2uVE9", MaterialSelect = material };
+			reinforcingBarType.AddRepresentationMap(representationMap);
 			db.Context.AddDeclared(reinforcingBarType);
 			if (assembly)
 			{

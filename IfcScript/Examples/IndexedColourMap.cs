@@ -10,10 +10,11 @@ using CoordIndex = System.Tuple<int, int, int>;
 
 namespace IFC.Examples
 {
-	class IndexedColourMap : IFCExampleBase
+	class IndexedColourMap : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
+			DatabaseIfc db = building.Database;
 			List<Coord3d> points = new List<Coord3d>() { new Coord3d(0, 0, 0), new Coord3d(1000, 0, 0), new Coord3d(1000, 1000, 0), new Coord3d(0, 1000, 0), new Coord3d(0, 0, 2000), new Coord3d(1000, 0, 2000), new Coord3d(1000, 1000, 2000), new Coord3d(0, 1000, 2000) }; 
 			IfcCartesianPointList3D cartesianPointList3D = new IfcCartesianPointList3D(db, points);
 			List<CoordIndex> coordIndex = new List<CoordIndex>() { new CoordIndex(1, 6, 5), new CoordIndex(1, 2, 6), new CoordIndex(6, 2, 7), new CoordIndex(7, 2, 3), new CoordIndex(7, 8, 6), new CoordIndex(6, 8, 5), new CoordIndex(5, 8, 1), new CoordIndex(1, 8, 4), new CoordIndex(4, 2, 1), new CoordIndex(2, 4, 3), new CoordIndex(4, 8, 7), new CoordIndex(7, 3, 4) };

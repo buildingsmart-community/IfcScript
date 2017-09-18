@@ -3,10 +3,10 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\BeamUnitTestsVaryingProfile.ifc',
-/* time_stamp */ '2016-10-29T15:39:17',
+/* time_stamp */ '2017-06-27T13:32:39',
 /* author */ ('jonm'),
 /* organization */ ('Geometry Gym'),
-/* preprocessor_version */ 'GeometryGymIFC v0.0.10.0 by Geometry Gym Pty Ltd built 2016-10-28T12:40:35',
+/* preprocessor_version */ 'GeometryGymIFC v0.0.15.0 by Geometry Gym Pty Ltd built 2017-06-27T02:48:24',
 /* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
@@ -18,11 +18,13 @@ DATA;
 #11= IFCAXIS2PLACEMENT3D(#10,$,$);
 #12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
-#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
+#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#18);
 #14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#67,#312),#13);
-#16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
-/* general entities required for all IFC data sets, defining the context for the exchange */
-#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
+#15= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#16= IFCAXIS2PLACEMENT3D(#15,$,$);
+#18= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
+/* general entities required for all IFC  sets, defining the context for the exchange */
+#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28),#21);
 #21= IFCUNITASSIGNMENT((#22,#23,#24,#25,#26));
 #22= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #23= IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
@@ -44,37 +46,37 @@ DATA;
 #57= IFCBEAMTYPE('32b2OtzCP30umNyY5LsCfN',$,'IPE200',$,$,$,$,$,$,.JOIST.);
 #58= IFCRELDEFINESBYTYPE('3s_DqAVvb3LguudTShJHVo',$,'NameNotAssigned',$,(#67),#57);
 #59= IFCRELDECLARES('1Cjr05W9T0fx0M3_mdVqMd',$,$,$,#20,(#57));
-#60= IFCMATERIALPROFILESETUSAGE(#55,5,$);
-#61= IFCRELASSOCIATESMATERIAL('2SL41bR1rCj99SIKuKXeFl',$,'MatAssoc','Material Associates',(#67),#60);
-#62= IFCCARTESIANPOINT((0.0,0.0,0.0));
-#63= IFCDIRECTION((0.0,1.0,0.0));
-#64= IFCDIRECTION((-1.0,0.0,0.0));
-#65= IFCAXIS2PLACEMENT3D(#62,#63,#64);
-#66= IFCLOCALPLACEMENT(#12,#65);
-#67= IFCBEAMSTANDARDCASE('0uo2yx7G19uwCu9sIjn6DQ',$,'IPE200',$,$,#66,#75,$,$);
+#60= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#61= IFCDIRECTION((0.0,1.0,0.0));
+#62= IFCDIRECTION((-1.0,0.0,0.0));
+#63= IFCAXIS2PLACEMENT3D(#60,#61,#62);
+#64= IFCMATERIALPROFILESETUSAGE(#55,5,$);
+#65= IFCRELASSOCIATESMATERIAL('2SL41bR1rCj99SIKuKXeFl',$,'MatAssoc','Material Associates',(#67),#64);
+#66= IFCLOCALPLACEMENT(#12,#63);
+#67= IFCBEAM('0uo2yx7G19uwCu9sIjn6DQ',$,'IPE200',$,$,#66,#75,$,$);
 #68= IFCCARTESIANPOINT((0.0,0.0,1000.0));
-#69= IFCPOLYLINE((#10,#68));
-#70= IFCSHAPEREPRESENTATION(#71,'Axis','Curve3D',(#69));
-#71= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+#69= IFCPOLYLINE((#15,#68));
+#70= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+#71= IFCSHAPEREPRESENTATION(#70,'Axis','Curve3D',(#69));
 #72= IFCEXTRUDEDAREASOLID(#52,$,#73,1000.0);
 #73= IFCDIRECTION((0.0,0.0,1.0));
 #74= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#72));
-#75= IFCPRODUCTDEFINITIONSHAPE($,$,(#70,#74));
+#75= IFCPRODUCTDEFINITIONSHAPE($,$,(#71,#74));
 #300= IFCCIRCLEHOLLOWPROFILEDEF(.AREA.,'CHS219.1x6.3',$,109.55,6.3);
 #301= IFCMATERIALPROFILE('CHS219.1x6.3',$,#50,#300,$,$);
 #303= IFCMATERIALPROFILESET('CHS219.1x6.3',$,(#301),$);
 #304= IFCRELASSOCIATESMATERIAL('14nDe0n1bErgiI78N83Oxd',$,'MatAssoc','Material Associates',(#305),#303);
 #305= IFCBEAMTYPE('3l_OKNTJr4yBOR5rYl6b9w',$,'CHS219.1x6.3',$,$,$,$,$,$,.BEAM.);
 #306= IFCRELDEFINESBYTYPE('3LrutsCpn4DPF9Zt4YdIEU',$,'NameNotAssigned',$,(#312),#305);
-#307= IFCMATERIALPROFILESETUSAGE(#303,5,$);
-#308= IFCRELASSOCIATESMATERIAL('1Set5Cyu9BFOWznvoQe1ho',$,'MatAssoc','Material Associates',(#312),#307);
-#309= IFCCARTESIANPOINT((500.0,0.0,0.0));
-#310= IFCAXIS2PLACEMENT3D(#309,#63,#64);
-#311= IFCLOCALPLACEMENT(#12,#310);
-#312= IFCBEAMSTANDARDCASE('3_NFDdmqr7mxekvlvcgwa7',$,'CHS219.1x6.3',$,$,#311,#318,$,$);
+#307= IFCCARTESIANPOINT((500.0,0.0,0.0));
+#308= IFCAXIS2PLACEMENT3D(#307,#61,#62);
+#309= IFCMATERIALPROFILESETUSAGE(#303,5,$);
+#310= IFCRELASSOCIATESMATERIAL('1Set5Cyu9BFOWznvoQe1ho',$,'MatAssoc','Material Associates',(#312),#309);
+#311= IFCLOCALPLACEMENT(#12,#308);
+#312= IFCBEAM('3_NFDdmqr7mxekvlvcgwa7',$,'CHS219.1x6.3',$,$,#311,#318,$,$);
 #313= IFCCARTESIANPOINT((0.0,0.0,1000.0));
-#314= IFCPOLYLINE((#10,#313));
-#315= IFCSHAPEREPRESENTATION(#71,'Axis','Curve3D',(#314));
+#314= IFCPOLYLINE((#15,#313));
+#315= IFCSHAPEREPRESENTATION(#70,'Axis','Curve3D',(#314));
 #316= IFCEXTRUDEDAREASOLID(#300,$,#73,1000.0);
 #317= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#316));
 #318= IFCPRODUCTDEFINITIONSHAPE($,$,(#315,#317));

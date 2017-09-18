@@ -3,10 +3,10 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\IndexedColourMap.ifc',
-/* time_stamp */ '2016-10-29T15:35:34',
+/* time_stamp */ '2017-06-27T13:32:38',
 /* author */ ('jonm'),
 /* organization */ ('Geometry Gym'),
-/* preprocessor_version */ 'GeometryGymIFC v0.0.10.0 by Geometry Gym Pty Ltd built 2016-10-28T12:40:35',
+/* preprocessor_version */ 'GeometryGymIFC v0.0.15.0 by Geometry Gym Pty Ltd built 2017-06-27T02:48:24',
 /* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
@@ -18,11 +18,13 @@ DATA;
 #11= IFCAXIS2PLACEMENT3D(#10,$,$);
 #12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
-#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
+#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#18);
 #14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#302),#13);
-#16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
-/* general entities required for all IFC data sets, defining the context for the exchange */
-#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
+#15= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#16= IFCAXIS2PLACEMENT3D(#15,$,$);
+#18= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
+/* general entities required for all IFC  sets, defining the context for the exchange */
+#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28),#21);
 #21= IFCUNITASSIGNMENT((#22,#23,#24,#25,#26));
 #22= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #23= IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
@@ -43,7 +45,7 @@ DATA;
 #300= IFCSHAPEREPRESENTATION(#32,'Body','Tessellation',(#51));
 #301= IFCPRODUCTDEFINITIONSHAPE($,$,(#300));
 #302= IFCBUILDINGELEMENTPROXY('25c34fWeL1NQux73WfnXox',$,'NOTDEFINED',$,$,#303,#301,$,$);
-#303= IFCLOCALPLACEMENT(#12,#11);
+#303= IFCLOCALPLACEMENT(#12,#16);
 ENDSEC;
 
 END-ISO-10303-21;

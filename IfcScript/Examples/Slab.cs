@@ -12,24 +12,25 @@ using CoordIndex = System.Tuple<int, int, int>;
 
 namespace IFC.Examples
 {
-	class Slab : IFCExampleBase
+	class Slab : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			SlabGenerator.GenerateData(db, building, false);
+			SlabGenerator.GenerateInstance( building, false);
 		}
 	}
-	class SlabOpenings : IFCExampleBase
+	class SlabOpenings : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
-			SlabGenerator.GenerateData(db, building, true);
+			SlabGenerator.GenerateInstance(building, true);
 		}
 	}
 	class SlabGenerator
 	{
-		internal static void GenerateData(DatabaseIfc db, IfcBuilding building, bool openings)
+		internal static void GenerateInstance(IfcBuilding building, bool openings)
 		{
+			DatabaseIfc db = building.Database;
 			IfcMaterial concrete = new IfcMaterial(db, "Concrete") { Category = "Concrete" };
 			int thickness = 200;
 			IfcMaterialLayer materialLayer = new IfcMaterialLayer(concrete, thickness,"Core");

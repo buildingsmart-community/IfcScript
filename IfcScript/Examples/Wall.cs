@@ -7,10 +7,11 @@ using GeometryGym.Ifc;
  
 namespace IFC.Examples
 {
-	class Wall : IFCExampleBase
+	class Wall : IFCExampleInstance
 	{
-		protected override void GenerateData(DatabaseIfc db, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
+			DatabaseIfc db = building.Database;
 			IfcMaterial masonryFinish = new IfcMaterial(db, "Masonry - Brick - Brown");
 			IfcMaterial masonry = new IfcMaterial(db, "Masonry");
 			IfcMaterialLayer layerFinish = new IfcMaterialLayer(masonryFinish, 110, "Finish");

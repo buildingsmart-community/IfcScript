@@ -81,13 +81,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GeometryGymIFC, Version=0.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeometryGymIFC.0.0.12.0\lib\net45\GeometryGymIFC.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="GeometryGymIFC, Version=0.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeometryGymIFC.0.0.15\lib\net45\GeometryGymIFC.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -104,12 +102,15 @@
     <Compile Include="Examples\Basin.cs" />
     <Compile Include="Examples\Bath.cs" />
     <Compile Include="Examples\Column.cs" />
+    <Compile Include="Examples\CurveParameters.cs" />
     <Compile Include="Examples\Reinforcement.cs" />
+    <Compile Include="Examples\SiteSetout.cs" />
     <Compile Include="Examples\Slab.cs" />
     <Compile Include="Examples\Wall.cs" />
     <Compile Include="Examples\Beam.cs" />
     <Compile Include="Examples\BeamUnitTests.cs" />
     <Compile Include="Examples\IndexedColourMap.cs" />
+    <Compile Include="Examples\Window.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

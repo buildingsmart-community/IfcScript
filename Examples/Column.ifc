@@ -3,10 +3,10 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\Column.ifc',
-/* time_stamp */ '2016-10-29T15:39:18',
+/* time_stamp */ '2017-06-27T13:32:40',
 /* author */ ('jonm'),
 /* organization */ ('Geometry Gym'),
-/* preprocessor_version */ 'GeometryGymIFC v0.0.10.0 by Geometry Gym Pty Ltd built 2016-10-28T12:40:35',
+/* preprocessor_version */ 'GeometryGymIFC v0.0.15.0 by Geometry Gym Pty Ltd built 2017-06-27T02:48:24',
 /* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
@@ -18,11 +18,13 @@ DATA;
 #11= IFCAXIS2PLACEMENT3D(#10,$,$);
 #12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
-#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
+#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#18);
 #14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#64),#13);
-#16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
-/* general entities required for all IFC data sets, defining the context for the exchange */
-#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
+#15= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#16= IFCAXIS2PLACEMENT3D(#15,$,$);
+#18= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
+/* general entities required for all IFC  sets, defining the context for the exchange */
+#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28),#21);
 #21= IFCUNITASSIGNMENT((#22,#23,#24,#25,#26));
 #22= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #23= IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
@@ -48,15 +50,15 @@ DATA;
 #61= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #62= IFCAXIS2PLACEMENT3D(#61,$,$);
 #63= IFCLOCALPLACEMENT(#12,#62);
-#64= IFCCOLUMNSTANDARDCASE('3S1GK_wA565RDoiWQEJc_l',$,'IPE200',$,$,#63,#72,$,$);
+#64= IFCCOLUMN('3S1GK_wA565RDoiWQEJc_l',$,'IPE200',$,$,#63,#72,$,$);
 #65= IFCCARTESIANPOINT((0.0,0.0,2000.0));
-#66= IFCPOLYLINE((#10,#65));
-#67= IFCSHAPEREPRESENTATION(#68,'Axis','Curve3D',(#66));
-#68= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+#66= IFCPOLYLINE((#15,#65));
+#67= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+#68= IFCSHAPEREPRESENTATION(#67,'Axis','Curve3D',(#66));
 #69= IFCEXTRUDEDAREASOLID(#52,$,#70,2000.0);
 #70= IFCDIRECTION((0.0,0.0,1.0));
 #71= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#69));
-#72= IFCPRODUCTDEFINITIONSHAPE($,$,(#67,#71));
+#72= IFCPRODUCTDEFINITIONSHAPE($,$,(#68,#71));
 #73= IFCRELDECLARES('1Cjr05W9T0fx0M3_mdVqMd',$,$,$,#20,(#57));
 ENDSEC;
 

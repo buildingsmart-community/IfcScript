@@ -3,10 +3,10 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\BasinAdvancedBrep.ifc',
-/* time_stamp */ '2016-10-29T15:39:18',
+/* time_stamp */ '2017-06-27T13:32:40',
 /* author */ ('jonm'),
 /* organization */ ('Geometry Gym'),
-/* preprocessor_version */ 'GeometryGymIFC v0.0.10.0 by Geometry Gym Pty Ltd built 2016-10-28T12:40:35',
+/* preprocessor_version */ 'GeometryGymIFC v0.0.15.0 by Geometry Gym Pty Ltd built 2017-06-27T02:48:24',
 /* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
@@ -18,11 +18,13 @@ DATA;
 #11= IFCAXIS2PLACEMENT3D(#10,$,$);
 #12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
-#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
+#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#18);
 #14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#204),#13);
-#16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
-/* general entities required for all IFC data sets, defining the context for the exchange */
-#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
+#15= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#16= IFCAXIS2PLACEMENT3D(#15,$,$);
+#18= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
+/* general entities required for all IFC  sets, defining the context for the exchange */
+#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28),#21);
 #21= IFCUNITASSIGNMENT((#22,#23,#24,#25,#26));
 #22= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #23= IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
@@ -180,19 +182,19 @@ DATA;
 #190= IFCADVANCEDFACE((#184,#187),#189,.T.);
 #191= IFCCLOSEDSHELL((#133,#169,#175,#181,#190));
 #192= IFCADVANCEDBREP(#191);
-#193= IFCREPRESENTATIONMAP(#11,#194);
+#193= IFCREPRESENTATIONMAP(#16,#194);
 #194= IFCSHAPEREPRESENTATION(#32,'Body','SolidModel',(#192));
 #195= IFCMATERIAL('Ceramic',$,$);
 #196= IFCRELASSOCIATESMATERIAL('0Pkhszwjv1qRMYyCFg9fjB',$,'MatAssoc','Material Associates',(#197),#195);
 #197= IFCSANITARYTERMINALTYPE('2Vk5O9OO94lfvLVH2WXKBZ',$,'Wash Hand Basin',$,$,$,(#193),$,$,.WASHHANDBASIN.);
 #198= IFCRELDEFINESBYTYPE('01OIK6g$5EVxvitdj$pQSU',$,'NameNotAssigned',$,(#204),#197);
 #199= IFCRELDECLARES('1Cjr05W9T0fx0M3_mdVqMd',$,$,$,#20,(#197));
-#200= IFCCARTESIANTRANSFORMATIONOPERATOR3D($,$,#10,1.0,$);
+#200= IFCCARTESIANTRANSFORMATIONOPERATOR3D($,$,#15,1.0,$);
 #201= IFCMAPPEDITEM(#193,#200);
 #202= IFCSHAPEREPRESENTATION(#32,'Body','MappedRepresentation',(#201));
 #203= IFCPRODUCTDEFINITIONSHAPE($,$,(#202));
 #204= IFCSANITARYTERMINAL('0dOOwKTsn8I8gwbP3LM1Yz',$,$,$,$,#205,#203,$,$);
-#205= IFCLOCALPLACEMENT(#12,#11);
+#205= IFCLOCALPLACEMENT(#12,#16);
 ENDSEC;
 
 END-ISO-10303-21;

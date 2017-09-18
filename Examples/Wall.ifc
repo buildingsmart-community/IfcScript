@@ -3,10 +3,10 @@ HEADER;
 FILE_DESCRIPTION(('ViewDefinition [DesignTransferView_V1]'),'2;1');
 FILE_NAME(
 /* name */ 'C:\\My Work\\Geometry Gym\\documents\\building smart\\github\\ifcscript\\examples\\Wall.ifc',
-/* time_stamp */ '2016-11-07T20:44:07',
+/* time_stamp */ '2017-06-27T13:32:39',
 /* author */ ('jonm'),
 /* organization */ ('Geometry Gym'),
-/* preprocessor_version */ 'GeometryGymIFC v0.0.11.0 by Geometry Gym Pty Ltd built 2016-11-07T09:35:37',
+/* preprocessor_version */ 'GeometryGymIFC v0.0.15.0 by Geometry Gym Pty Ltd built 2017-06-27T02:48:24',
 /* originating_system */ 'IFCExamples v0.0.1.0',
 /* authorization */ 'None');
 
@@ -18,11 +18,13 @@ DATA;
 #11= IFCAXIS2PLACEMENT3D(#10,$,$);
 #12= IFCLOCALPLACEMENT($,#11);
 /* defines the default building (as required as the minimum spatial element)  */
-#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#16);
+#13= IFCBUILDING('39t4Pu3nTC4ekXYRIHJB9W',$,'IfcBuilding',$,$,#12,$,$,$,$,$,#18);
 #14= IFCRELCONTAINEDINSPATIALSTRUCTURE('3Sa3dTJGn0H8TQIGiuGQd5',$,'Building','Building Container for Elements',(#307),#13);
-#16= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
-/* general entities required for all IFC data sets, defining the context for the exchange */
-#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28,#28),#21);
+#15= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#16= IFCAXIS2PLACEMENT3D(#15,$,$);
+#18= IFCPOSTALADDRESS($,$,$,$,('Unknown'),$,'Unknown',$,'Unknown','Unknown');
+/* general entities required for all IFC  sets, defining the context for the exchange */
+#20= IFCPROJECT('0$WU4A9R19$vKWO$AdOnKA',$,'IfcProject',$,$,$,$,(#28),#21);
 #21= IFCUNITASSIGNMENT((#22,#23,#24,#25,#26));
 #22= IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
 #23= IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
@@ -53,15 +55,15 @@ DATA;
 #308= IFCCARTESIANPOINT((0.0,0.0,0.0));
 #309= IFCCARTESIANPOINT((5000.0,0.0,0.0));
 #310= IFCPOLYLINE((#308,#309));
-#311= IFCSHAPEREPRESENTATION(#312,'Axis','Curve3D',(#310));
-#312= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+#311= IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#28,$,.MODEL_VIEW.,$);
+#312= IFCSHAPEREPRESENTATION(#311,'Axis','Curve3D',(#310));
 #313= IFCRECTANGLEPROFILEDEF(.AREA.,$,$,5000.0,270.0);
 #314= IFCCARTESIANPOINT((2500.0,0.0,0.0));
 #315= IFCAXIS2PLACEMENT3D(#314,$,$);
 #316= IFCEXTRUDEDAREASOLID(#313,#315,#317,2000.0);
 #317= IFCDIRECTION((0.0,0.0,1.0));
 #318= IFCSHAPEREPRESENTATION(#32,'Body','SweptSolid',(#316));
-#319= IFCPRODUCTDEFINITIONSHAPE($,$,(#311,#318));
+#319= IFCPRODUCTDEFINITIONSHAPE($,$,(#312,#318));
 #320= IFCRELDECLARES('1Cjr05W9T0fx0M3_mdVqMd',$,$,$,#20,(#300));
 ENDSEC;
 

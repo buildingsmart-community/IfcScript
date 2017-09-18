@@ -47,7 +47,10 @@ namespace IFCExamples
 			new ReinforcingBar().GenerateExample(path, ModelView.Ifc4DesignTransfer);
 			new ReinforcingAssembly().GenerateExample(path, ModelView.Ifc4DesignTransfer);
 			new Column().GenerateExample(path, ModelView.Ifc4DesignTransfer);
-
+			new CurveParametersRadians().GenerateExample(path, ModelView.Ifc4DesignTransfer,true);
+			new CurveParametersDegrees().GenerateExample(path, ModelView.Ifc4DesignTransfer,false);
+			//new CurveParametersRadians().GenerateExample(path, ModelView.Ifc2x3Coordination,true);
+			//new CurveParametersDegrees().GenerateExample(path, ModelView.Ifc2x3Coordination,false);
 			//Possible Examples to add
 			// IfcBuildingStorey with datums and local placements relative to building
 			// IfcProjectLibrary

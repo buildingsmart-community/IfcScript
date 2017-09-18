@@ -6,10 +6,11 @@ using GeometryGym.Ifc;
 
 namespace IFC.Examples
 {
-	internal class Column : IFCExampleBase 
+	internal class Column : IFCExampleInstance 
 	{
-		protected override void GenerateData(DatabaseIfc database, IfcBuilding building)
+		protected override void GenerateInstance(IfcBuilding building)
 		{
+			DatabaseIfc database = building.Database;
 			IfcMaterialProfile materialProfile = GetParametericIPE200Profile(database);
 			IfcColumnType columnType = new IfcColumnType(materialProfile.Name,  materialProfile, IfcColumnTypeEnum.COLUMN);
 			IfcMaterialProfileSet materialProfileSet = columnType.MaterialSelect as IfcMaterialProfileSet;
