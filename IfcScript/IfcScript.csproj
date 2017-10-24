@@ -104,7 +104,6 @@
     <Compile Include="Examples\Column.cs" />
     <Compile Include="Examples\CurveParameters.cs" />
     <Compile Include="Examples\Reinforcement.cs" />
-    <Compile Include="Examples\SiteSetout.cs" />
     <Compile Include="Examples\Slab.cs" />
     <Compile Include="Examples\Wall.cs" />
     <Compile Include="Examples\Beam.cs" />
