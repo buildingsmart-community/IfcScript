@@ -1,4 +1,4 @@
-This is a project by Building SMART to generate example IFC files.
+This is a project by buildingSMART to generate example IFC files.
 Primarily for IFC4 (but not restricted to this schema), it is 
 intended to concentrate on samples and unit tests demonstrating
 features and improvements in IFC4.
