@@ -28,8 +28,6 @@ namespace IFC.Examples
 			//Unique ids assigned to generate constant IfcScript  sample files, remove otherwise
 			wallType.GlobalId = "2aG1gZj7PD2PztLOx2$IVX";
 			wallStandardCase.GlobalId = "0DWgwt6o1FOx7466fPk$jl";
-			materialLayerSet.Associates.GlobalId = "36U74BIPDD89cYkx9bkV$Y";
-			wallStandardCase.MaterialSelect.Associates.GlobalId = "1BYoVhjtLADPUZYzipA826";
 		}
 	}
 	
