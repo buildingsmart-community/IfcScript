@@ -74,11 +74,11 @@ namespace IFC
 		{
 			DatabaseIfc database = GenerateDatabase(modelView, radians);
 			IfcBuilding building = new IfcBuilding(database, "IfcBuilding");
-			building.Comments.Add("defines the default building (as required as the minimum spatial element) ");
+			building.AddComment("defines the default building (as required as the minimum spatial element) ");
 			database.NextObjectRecord = 20;
 			IfcProject project = new IfcProject(building, "IfcProject", IfcUnitAssignment.Length.Millimetre);
-			project.Comments.Add("general entities required for all IFC  sets, defining the context for the exchange");
-			database.Factory.SubContext(FactoryIfc.SubContextIdentifier.Body);
+			project.AddComment("general entities required for all IFC  sets, defining the context for the exchange");
+			database.Factory.SubContext(IfcGeometricRepresentationSubContext.SubContextIdentifier.Body);
 			database.NextObjectRecord = 50;
 			GenerateInstance(building);
 			ReadOnlyCollection<IfcRelDeclares> rds = project.Declares;
@@ -91,7 +91,7 @@ namespace IFC
 			project.GlobalId = "0$WU4A9R19$vKWO$AdOnKA";
 			project.IsDecomposedBy[0].GlobalId = "091a6ewbvCMQ2Vyiqspa7a";
 
-			database[50].Comments.Add("Example data for " + this.GetType().Name);
+			database[50].AddComment("Example data for " + this.GetType().Name);
 			WriteFile(database, path);
 		}
 		protected abstract void GenerateInstance(IfcBuilding building);
@@ -104,7 +104,6 @@ namespace IFC
 
 			//Unique ids assigned to generate constant IfcScript  sample files, remove otherwise
 			beamType.ObjectTypeOf.GlobalId = "3s_DqAVvb3LguudTShJHVo";
-			beamType.MaterialSelect.Associates.GlobalId = "0NkGSIHVT3SeAR6bnw7pSa";
 
 			return beamType;
 		}
@@ -112,11 +111,8 @@ namespace IFC
 		{
 			IfcMaterial material = new IfcMaterial(database, "S355JR") { Category = "Steel" };
 
-			//Unique ids assigned to generate constant IfcScript  sample files, remove otherwise
-			material.Associates.GlobalId = "1oJeVe14nCYf5cL0Mka0KL";
-
 			string name = "IPE200";
-			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(database, name, 200, 100, 5.6, 8.5, 12);
+			IfcIShapeProfileDef ipe200 = new IfcIShapeProfileDef(database, name, 200, 200, 5.6, 8.5);
 			return new IfcMaterialProfile(name, material, ipe200);
 		}
 	}
